@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>peppermint</title>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+  <!-- header --> 
+   
+  <div class="headline">
+  <div class="headline-text">
+    <span>FREE SHIPPING AND RETURNS</span>
+    <span>LIMITED TIME OFFER - SHOP NOW</span>
+    <span>BECOME A PARTNER TODAY</span>
+  </div>
+
+  <div class="headline-right">
+    <ul class="headline-links">
+
+      <li class="nav-item headline-link">
+        <a href="login.html">Request<br>Logistics</a>
+      </li>
+      <li class="nav-item headline-link">
+        <a href="register.html">Become<br>a Partner</a>
+      </li>
+
+    </ul>
+
+    <div class="tf-currencies">
+      <form action="https://foodcheq.coop/set-currency" method="POST">
+        <input type="hidden" name="_token" value="hBap8p3Rj0gaLm42Yhgu4TZJH08MesPvE74ATfN9">
+        <select id="currency" name="currency" onchange="this.form.submit()" class="form-control form-control-sm">
+          <option value="USD" selected>USD ($)</option>
+          <option value="NGN">NGN (₦)</option>
+        </select>
+      </form>
+    </div>
+  </div>
+  </div>
+
+  
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img src="https://foodcheq.coop/upload/eSio9fKkSKNFqEeGkq6kRnJDhaFpE1.png" alt="logo" class="logo">
+      </a>
+
+      <!-- Hamburger toggle (mobile) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible nav links -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          
+          <!-- Dropdown Menu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Menu
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+              <li><a class="dropdown-item" href="index.html">Home</a></li>
+              <li><a class="dropdown-item" href="about.html">About</a></li>
+              <li><a class="dropdown-item" href="product-category.html">Shop</a></li>
+              <li><a class="dropdown-item" href="sample.html">Request Sample</a></li>
+            </ul>
+          </li>
+
+          <!-- Other links -->
+         <li class="nav-item"><a class="nav-link special-link" href="login.html">REQUEST <br>LOGISTICS</a></li>
+         <li class="nav-item"><a class="nav-link special-link" href="track-shipment.html">TRACK <br>SHIPMENT</a></li>
+         <li class="nav-item"><a class="nav-link special-link" href="register.html">BECOME A <br>PARTNER</a></li>
+
+        </ul>
+
+        <!-- Header icons -->
+        <div class="header-icons d-flex align-items-center ms-lg-3">
+
+          <a href="#" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvas">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+
+          <a href="login.html"><i class="fa-solid fa-user"></i></a>
+          <a href="cart.html" class="position-relative" aria-label="View Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cartCount"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+  <!-- Product Section -->
+  <section class="container py-5 product-section">
+    <div class="row align-items-center g-4">
+      <!-- Product Image -->
+      <div class="col-md-6 text-center">
+        <img src="/image/peppermint tea.png" class="img-fluid rounded shadow-sm product-img" alt="Peppermint Tea">
+      </div>
+      <!-- Product Content -->
+      <div class="col-md-6 product-content">
+        <h2 class="fw-bold mb-3" style="color: var(--main-green);">Peppermint <span class="fs-5 text-muted">— $10 / 200g</span></h2>
+        <p class="price h4 text-success fw-bold">$10.00</p>
+        <div class="d-flex gap-2 flex-wrap mt-3">
+          <button class="btn btn-green flex-fill"><i class="fa-solid fa-cart-shopping me-1"></i> Add to Cart</button>
+          <button class="btn btn-outline-success flex-fill"><i class="fa-regular fa-heart me-1"></i> Wishlist</button>
+          <button class="btn btn-outline-success flex-fill"><i class="fa-solid fa-mug-hot me-1"></i> Free Sample</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="details mt-5">
+      <h4 class="fw-bold mb-3">Product Description</h4>
+      <p>Peppermint Tea is a refreshing herbal infusion made from the dried leaves of <em>Mentha piperita</em>, a hybrid mint plant prized for its cooling, invigorating flavour and aroma. This premium quality peppermint tea delivers the classic bright, minty taste that soothes digestion and uplifts the senses. Naturally caffeine-free and packed with beneficial volatile oils including menthol, peppermint is a beloved classic in herbal wellness traditions worldwide. Each cup provides a perfect post-meal comfort or afternoon refreshment without the stimulation of caffeine.</p>
+      
+      <h4 class="fw-bold mt-4 mb-3">Health Benefits</h4>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Soothes digestion and supports gastrointestinal comfort.</li>
+        <li class="list-group-item">Helps relieve occasional bloating and gas.</li>
+        <li class="list-group-item">Refreshing cooling effect that uplifts mood and energy.</li>
+        <li class="list-group-item">Natural menthol content supports respiratory comfort.</li>
+        <li class="list-group-item">May help ease occasional indigestion and nausea.</li>
+        <li class="list-group-item">Supports mental clarity and focus when sipped warm.</li>
+        <li class="list-group-item">Rich in antioxidants and beneficial plant compounds.</li>
+        <li class="list-group-item">Caffeine-free, perfect for any time of day.</li>
+      </ul>
+    </div>
+  </section>
+
+    <h3 id="related-title">Related Items</h3>
+
+    <div class="related-wrapper"></div>
+      <div class="related-grid row g-4">
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm">
+            <img src="/image/baobab.png">
+            <h6>Baobab - $3/200g</h6>
+            <p class="text-success fw-bold">$3.00</p>
+            <button class="btn-green mb-2">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm">
+            <img src="/image/laveneder tea.png">
+            <h6>Lavender - $15/120g</h6>
+            <p class="text-success fw-bold">$15.00</p>
+            <button class="btn-green mb-2">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm">
+            <img src="/image/Skullscap tea.png">
+            <h6>Skullcap - $12/50g</h6>
+            <p class="text-success fw-bold">$12.00</p>
+            <button class="btn-green mb-2">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm">
+            <img src="/image/clove powder tea.png">
+            <h6>Clove - $4/50g</h6>
+            <p class="text-success fw-bold">$4.00</p>
+            <button class="btn-green mb-2">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+  </section>
+
+  <section class="container mt-5">
+    <h3 class="text-center mb-4" style="color: var(--main-green); font-weight:700;">Customer Reviews</h3>
+    <div class="row g-4">
+      <!-- Customer Review 1 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card card-review shadow-sm">
+          <h6 class="mb-0" style="color: var(--main-green);">James R.</h6>
+          <p>"Perfect for after-dinner digestion."</p>
+          <div class="text-warning">★★★★★</div>
+        </div>
+      </div>
+      <!-- Customer Review 2 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card card-review shadow-sm">
+          <h6 class="mb-0" style="color: var(--main-green);">Clara V.</h6>
+          <p>"Refreshing and gentle — kids like it too."</p>
+          <div class="text-warning">★★★★★</div>
+        </div>
+      </div>
+      <!-- Customer Review 3 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card card-review shadow-sm">
+          <h6 class="mb-0" style="color: var(--main-green);">Eddie P.</h6>
+          <p>"Great flavor and stomach calming effect."</p>
+          <div class="text-warning">★★★★☆</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+  <!-- Footer -->
+  <footer class="bg-dark text-light pt-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-12 mb-4">
+          <h6 class="fw-bold">ABOUT US</h6>
+          <a href="https://foodcheq.coop"><img src="https://foodcheq.coop/upload/eSio9fKkSKNFqEeGkq6kRnJDhaFpE1.png" alt="Logo" class="img-fluid mb-2" style="max-width:150px;"></a>
+          <p class="small">FoodCheQ is a subscription-based food logistics service for individuals and businesses interested in the Agricultural sector value chains, particularly organic Health and Wellness Foods.</p>
+          <a href="about.html" class="btn btn-outline-success btn-sm mt-2">See More</a>
+        </div>
+        <div class="col-md-3 col-12 mb-4">
+          <h6 class="fw-bold">HELP</h6>
+          <ul class="list-unstyled small">
+            <li><a href="https://foodcheq.coop/privacy" class="text-light text-decoration-none">Privacy Policy</a></li>
+            <li><a href="https://foodcheq.coop/returns" class="text-light text-decoration-none">Returns + Exchanges</a></li>
+            <li><a href="https://foodcheq.coop/shipping_delivery" class="text-light text-decoration-none">Shipping + Delivery</a></li>
+            <li><a href="https://foodcheq.coop/terms" class="text-light text-decoration-none">Terms & Conditions</a></li>
+            <li><a href="https://foodcheq.coop/faq" class="text-light text-decoration-none">FAQ's</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-12 mb-4">
+          <h6 class="fw-bold">QUICK NAVIGATION</h6>
+          <ul class="list-unstyled small">
+            <li><a href="about.html" class="text-light text-decoration-none">Our Story</a></li>
+            <li><a href="product-category.html" class="text-light text-decoration-none">Visit Our Store</a></li>
+            <li><a href="https://foodcheq.coop/vendors" class="text-light text-decoration-none">Our Partners</a></li>
+            <li><a href="https://foodcheq.coop/blog" class="text-light text-decoration-none">Blog</a></li>
+            <li><a href="https://foodcheq.coop/fedex_track" class="text-light text-decoration-none">Track Shipment</a></li>
+            <li><a href="https://foodcheq.coop/contact" class="text-light text-decoration-none">Contact Us</a></li>
+            <li><a href="login.html" class="text-light text-decoration-none">Account</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-12 mb-4">
+          <h6 class="fw-bold">CONTACT US</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-1">Address: Plot A, Central Orchard Section, Okiloki Farm Settlement, Abbi NWLGA, Delta State</li>
+            <li class="mb-1">Email: <a href="mailto:team@foodcheq.coop" class="text-light text-decoration-none">team@foodcheq.coop</a></li>
+            <li class="mb-1">Phone: <a href="tel:+2349027921510" class="text-light text-decoration-none">+2349027921510</a></li>
+          </ul>
+          <a href="https://foodcheq.coop/contact" class="btn btn-outline-success btn-sm mt-2">Get Directions</a>
+        </div>
+      </div>
+      <hr class="border-success">
+      <div class="row">
+        <div class="col-12 text-center small text-muted">© <span id="year"></span> FoodCheQ. All Rights Reserved.</div>
+      </div>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>

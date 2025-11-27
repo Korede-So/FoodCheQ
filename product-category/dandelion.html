@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dandelion</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- Topline / Headline -->
+    <div
+      class="headline d-flex justify-content-between align-items-center px-3"
+    >
+      <div class="headline-text">
+        <span>FREE SHIPPING AND RETURNS</span>
+        <span>LIMITED TIME OFFER - SHOP NOW</span>
+        <span>BECOME A PARTNER TODAY</span>
+      </div>
+
+      <div class="headline-right d-flex align-items-center">
+        <ul class="headline-links d-flex me-3">
+          <li class="nav-item headline-link">
+            <a href="request-logistics.html">Request<br />Logistics</a>
+          </li>
+          <li class="nav-item headline-link">
+            <a href="become-partner.html">Become<br />a Partner</a>
+          </li>
+        </ul>
+
+        <div class="tf-currencies">
+          <form action="https://foodcheq.coop/set-currency" method="POST">
+            <input type="hidden" name="_token" value="" />
+            <select
+              id="currency"
+              name="currency"
+              class="form-control form-control-sm"
+            >
+              <option value="USD" selected>USD ($)</option>
+              <option value="NGN">NGN (₦)</option>
+            </select>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Header / Nav -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              src="https://foodcheq.coop/upload/eSio9fKkSKNFqEeGkq6kRnJDhaFpE1.png"
+              alt="logo"
+              class="logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="menuDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Menu</a
+                >
+                <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                  <li><a class="dropdown-item" href="index.html">Home</a></li>
+                  <li><a class="dropdown-item" href="about.html">About</a></li>
+                  <li>
+                    <a class="dropdown-item" href="product-category.html"
+                      >Shop</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="request-sample.html"
+                      >Request Sample</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link special-link" href="request-logistics.html"
+                  >REQUEST <br />LOGISTICS</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link special-link" href="track-shipment.html"
+                  >TRACK <br />SHIPMENT</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link special-link" href="become-partner.html"
+                  >BECOME A <br />PARTNER</a
+                >
+              </li>
+            </ul>
+            <div class="header-icons d-flex align-items-center ms-lg-3">
+              <a
+                href="#"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#searchOffcanvas"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+              <a href="login.html" class="ms-3"
+                ><i class="fa-solid fa-user"></i
+              ></a>
+              <a
+                href="cart.html"
+                class="position-relative ms-3"
+                aria-label="View Cart"
+                ><i class="fa-solid fa-cart-shopping"></i>
+                <span
+                  id="cartCount"
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
+                  >0</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container product-section">
+      <div class="row align-items-center g-4">
+        <div class="col-md-6">
+          <img src="/image/dandelion.png" class="product-img" alt="dandelion" />
+        </div>
+        <div class="col-md-6 product-content">
+          <h2>Dandelion - $12/50g</h2>
+          <p>
+            Beneficial to Endocrine System, Renal system and Reproductive
+            system. #LiverHealth #ReduceWaterWeight #ImmuneBoost
+            #AntiInflammatory #DiabetesSupport #LowerCholesterol #HeartHealth
+            #LowerBloodPressure #WeightLossJourney #PreventUTIs
+            #CancerPrevention
+          </p>
+          <p class="price">$12.00</p>
+          <div class="d-flex gap-3 flex-wrap">
+            <div class="product-actions">
+              <button class="btn-green">
+                <i class="fa-solid fa-cart-shopping me-1"></i> Add to Cart
+              </button>
+              <button class="btn-outline-success">
+                <i class="fa-regular fa-heart me-1"></i> Wishlist
+              </button>
+              <button class="btn-outline-success">
+                <i class="fa-solid fa-mug-hot me-1"></i> Free Sample
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="details">
+        <h4>Product Description</h4>
+        <p>
+          Dandelion is a nutrient-dense herb derived from the entire plant
+          (Taraxacum officinale), including roots, leaves, and flowers. This
+          humble plant has been used for centuries in traditional medicine and
+          culinary preparations across many cultures. Our premium quality
+          dandelion is carefully harvested and dried to preserve its beneficial
+          compounds and natural bitterness. Each 100g package provides a
+          versatile botanical. Perfect for herbal teas, coffee substitutes, or
+          traditional wellness preparations.
+        </p>
+        <h4>Health Benefits</h4>
+        <ul>
+          <li>Supports liver health and detoxification</li>
+          <li>Rich in minerals and vital nutrients</li>
+          <li>May support healthy digestion</li>
+          <li>Rich in antioxidants that protect against free radicals</li>
+          <li>Traditional digestive bitter herb</li>
+          <li>Supports kidney and urinary function</li>
+          <li>May help with inflammation management</li>
+          <li>Supports overall detoxification processes</li>
+        </ul>
+      </div>
+      <h3 id="related-title">Related Items</h3>
+      <div class="related-wrapper"></div>
+      <div class="related-grid row g-4">
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm">
+            <img src="/image/Milk thistle tea.png" />
+            <h6>Milk Thistle - $12/100g</h6>
+            <p class="text-success fw-bold">$12.00</p>
+            <button class="btn-green mb-2">Add to Cart</button>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm">
+            <img src="/image/Blackthorn tea.png" />
+            <h6>Blackthorn - $10/100g</h6>
+            <p class="text-success fw-bold">$10.00</p>
+            <button class="btn-green mb-2">Add to Cart</button>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm">
+            <img src="/image/parsley tea.png" />
+            <h6>Parsley - $3/bunch</h6>
+            <p class="text-success fw-bold">$3.00</p>
+            <button class="btn-green mb-2">Add to Cart</button>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm">
+            <img src="/image/Stinging nettle tea.png" />
+            <h6>Stinging Nettle - $10/100g</h6>
+            <p class="text-success fw-bold">$10.00</p>
+            <button class="btn-green mb-2">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="container mt-5">
+      <h3
+        class="text-center mb-4"
+        style="color: var(--main-green); font-weight: 700"
+      >
+        Customer Reviews
+      </h3>
+      <div class="row g-4">
+        <div class="col-md-4 col-sm-6">
+          <div class="card card-review shadow-sm">
+            <div class="d-flex align-items-center mb-3">
+              <img src="" class="rounded-circle me-3" width="50" />
+              <div>
+                <h6 class="mb-0" style="color: var(--main-green)">Helen Q.</h6>
+                <small class="text-muted">Verified Buyer</small>
+              </div>
+            </div>
+            <p>"Excellent dandelion. Great for liver support!"</p>
+            <div class="text-warning">★★★★★</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="card card-review shadow-sm">
+            <div class="d-flex align-items-center mb-3">
+              <img src="" class="rounded-circle me-3" width="50" />
+              <div>
+                <h6 class="mb-0" style="color: var(--main-green)">Carlos A.</h6>
+                <small class="text-muted">Verified Buyer</small>
+              </div>
+            </div>
+            <p>"Pure quality. Perfect detoxifying tea!"</p>
+            <div class="text-warning">★★★★★</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="card card-review shadow-sm">
+            <div class="d-flex align-items-center mb-3">
+              <img src="" class="rounded-circle me-3" width="50" />
+              <div>
+                <h6 class="mb-0" style="color: var(--main-green)">Amy S.</h6>
+                <small class="text-muted">Verified Buyer</small>
+              </div>
+            </div>
+            <p>"Great nutritional profile. Highly recommended!"</p>
+            <div class="text-warning">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

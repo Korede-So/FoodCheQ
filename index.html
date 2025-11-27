@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FoodCheQ | Herbal Wellness</title>
+
+    <!-- boostrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <script src="cart.js"></script>
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- header -->
+
+    <div class="headline">
+      <div class="headline-text">
+        <span>FREE SHIPPING AND RETURNS</span>
+        <span>LIMITED TIME OFFER - SHOP NOW</span>
+        <span>BECOME A PARTNER TODAY</span>
+      </div>
+
+      <div class="headline-right">
+        <ul class="headline-links">
+          <li class="nav-item headline-link">
+            <a href="login.html">Request<br />Logistics</a>
+          </li>
+          <li class="nav-item headline-link">
+            <a href="register.html">Become<br />a Partner</a>
+          </li>
+        </ul>
+
+        <div class="tf-currencies">
+          <form action="https://foodcheq.coop/set-currency" method="POST">
+            <input
+              type="hidden"
+              name="_token"
+              value="hBap8p3Rj0gaLm42Yhgu4TZJH08MesPvE74ATfN9"
+            />
+            <select
+              id="currency"
+              name="currency"
+              onchange="this.form.submit()"
+              class="form-control form-control-sm"
+            >
+              <option value="USD" selected>USD ($)</option>
+              <option value="NGN">NGN (₦)</option>
+            </select>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">
+            <img
+              src="https://foodcheq.coop/upload/eSio9fKkSKNFqEeGkq6kRnJDhaFpE1.png"
+              alt="logo"
+              class="logo"
+            />
+          </a>
+
+          <!-- Hamburger toggle (mobile) -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Collapsible nav links -->
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+              <!-- Dropdown Menu -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="menuDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Menu
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                  <li><a class="dropdown-item" href="index.html">Home</a></li>
+                  <li><a class="dropdown-item" href="about.html">About</a></li>
+                  <li>
+                    <a class="dropdown-item" href="product-category.html"
+                      >Shop</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="sample.html"
+                      >Request Sample</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Other links -->
+              <li class="nav-item">
+                <a class="nav-link special-link" href="login.html"
+                  >REQUEST <br />LOGISTICS</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link special-link" href="track-shipment.html"
+                  >TRACK <br />SHIPMENT</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link special-link" href="register.html"
+                  >BECOME A <br />PARTNER</a
+                >
+              </li>
+            </ul>
+
+            <!-- Header icons -->
+            <div class="header-icons d-flex align-items-center ms-lg-3">
+              <a
+                href="#"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#searchOffcanvas"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </a>
+
+              <a href="login.html"><i class="fa-solid fa-user"></i></a>
+              <a
+                href="cart.html"
+                class="position-relative"
+                aria-label="View Cart"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span
+                  id="cartCount"
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
+                  >0</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- hero/home page -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Natural Herbal Remedies That Heal From Within</h1>
+        <p>
+          We bring you organic herbal and medicinal foods sourced from around
+          the world. Discover solutions for your wellness at the best prices
+          with trusted quality,Try a free sample today.
+        </p>
+        <div class="cta-buttons">
+          <a href="product-category.html" class="btn-primary">Shop Now</a>
+          <a href="sample.html" class="btn-outline">Request free sample</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img
+          src="https://i.pinimg.com/1200x/0e/95/0d/0e950ddd785316a1eb11a73716a31525.jpg"
+          alt="Herbal Products"
+        />
+      </div>
+    </section>
+
+    <!-- about/who we are-->
+    <section class="about">
+      <div class="about-container">
+        <div class="about-image">
+          <img
+            src="https://i.pinimg.com/736x/83/0e/4e/830e4ee03fe26f537eabaffa4343efed.jpg"
+            alt="herbal"
+          />
+        </div>
+        <div class="about-text">
+          <h1>WHO WE ARE</h1>
+          <p>
+            🌿 FoodCheQ Herbals: Affordable Healing in Every Teacup FoodCheQ
+            Herbals is a subscription-based herbal food and wellness store
+            rooted in the belief that food is medicine. In a world where
+            healthcare is expensive and often reactive, FoodCheQ offers a
+            natural, affordable alternative that empowers people to take charge
+            of their health...
+          </p>
+          <ul>
+            <li>🌿 100% natural and organic products</li>
+            <li>🤝 Community-powered cooperative</li>
+            <li>🌍 Sustainable and ethical sourcing</li>
+            <li>💚 Focused on wellness, not just profit</li>
+          </ul>
+          <a href="about.html" class="btn-primary">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- differences -->
+    <section class="foodcheq-difference">
+      <div class="container">
+        <h5 class="section-title">💚 What Makes FoodCheQ Herbals Different?</h5>
+
+        <div class="features">
+          <div class="feature">
+            <img
+              src="icon/🍃 Ancient Herbal Wisdom for Modern Wellness.jpeg"
+              alt="Natural Ingredients"
+              class="feature-icon"
+            />
+            <p>100% natural ingredients backed by traditional remedies</p>
+          </div>
+
+          <div class="feature">
+            <img
+              src="icon/Delivery service with masks concept _ Free Vector.jpeg"
+              alt="Fast Delivery"
+              class="feature-icon"
+            />
+            <p>Fast, reliable doorstep delivery</p>
+          </div>
+
+          <div class="feature">
+            <img
+              src="icon/jpeg(1)"
+              alt="Community Loved"
+              class="feature-icon"
+            />
+            <p>Loved and trusted by our community</p>
+          </div>
+
+          <div class="feature">
+            <img
+              src="icon/Northeast School of Botanical Medicine.jpeg"
+              alt="Evidence Based"
+              class="feature-icon"
+            />
+            <p>Evidence-based herbal alternatives</p>
+          </div>
+        </div>
+
+        <div class="cta">
+          <a href="sample.html" class="btn-sample"
+            >Still curious? Get a free sample</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- feautured product -->
+    <section class="featured-products">
+      <div class="container">
+        <div class="header">
+          <span>Featured Products</span>
+          <p>
+            Check Out All Products
+            <a href="product-category.html">here</a>
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <div class="product-card">
+            <a href="#">
+              <div class="image">
+                <img src="/images/Ginger-Powder.jpg" alt="Ginger" />
+                <span class="badge">Bestseller</span>
+              </div>
+            </a>
+            <div class="details">
+              <a href="#">Ginger - $5/kg</a>
+              <span>$5.00</span>
+              <p class="reviews">⭐ 4.7 (120 reviews)</p>
+              <button
+                class="btn-orange add-to-cart"
+                data-name="Ginger"
+                data-price="5"
+                data-image="/images/Ginger-Powder.jpg"
+                data-qty="1"
+              >
+                <i class="fas fa-shopping-cart me-1"></i>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <a href="#">
+              <div class="image">
+                <img src="images/Turmeric-Powder.jpg" alt="Turmeric" />
+                <span class="badge">Hot Deal</span>
+              </div>
+            </a>
+            <div class="details">
+              <a href="#">Turmeric - $20/kg</a>
+              <span>$20.00</span>
+              <p class="reviews">⭐ 4.5 (85 reviews)</p>
+              <button
+                class="btn-orange add-to-cart"
+                data-name="Turmeric"
+                data-price="20"
+                data-image="/images/Turmeric-Powder.jpg"
+                data-qty="1"
+              >
+                <i class="fas fa-shopping-cart me-1"></i>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <a href="#">
+              <div class="image">
+                <img src="images/Ashwagandha.jpg" alt="Ashwagandha" />
+                <span class="badge">Top Rated</span>
+              </div>
+            </a>
+            <div class="details">
+              <a href="#">Ashwagandha - $35/kg</a>
+              <span>$35.00</span>
+              <p class="reviews">⭐ 4.9 (210 reviews)</p>
+              <button
+                class="btn-orange add-to-cart"
+                data-name="Ashwagandha"
+                data-price="35"
+                data-image="/images/Ashwagandha.jpg"
+                data-qty="1"
+              >
+                <i class="fas fa-shopping-cart me-1"></i>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Community">
+      <div class="container">
+        <div class="community-grid">
+          <div class="community-text">
+            <h5>👩🏽‍🌾 Community First, Always</h5>
+            <p>
+              At FoodCheQ, wellness is more than personal health — it’s about
+              community, sustainability, and empowerment.
+            </p>
+
+            <div class="features">
+              <div class="feature">
+                🌿 <strong>Healing Foods, Delivered</strong>
+                <p>
+                  Herbal boxes with teas, blends, and greens delivered to your
+                  door.
+                </p>
+              </div>
+
+              <div class="feature">
+                🤝 <strong>Cooperative Model</strong>
+                <p>Member-owned, community-powered, and not profit-driven.</p>
+              </div>
+
+              <div class="feature">
+                📚 <strong>Evidence-Based</strong>
+                <p>
+                  Every product backed by research or centuries of safe use.
+                </p>
+              </div>
+
+              <div class="feature">
+                💚 <strong>Affordable Wellness</strong>
+                <p>Natural care that fits every family’s budget.</p>
+              </div>
+            </div>
+
+            <div class="cta">
+              <a href="sample.html" class="btn-sample"
+                >Still curious? Get a free sample</a
+              >
+            </div>
+          </div>
+
+          <div class="community-image">
+            <img
+              src="https://foodcheq.coop/upload/5VmuTsawAkmSe5D4zGIpxTU4bPtpGh.jpg"
+              alt="FoodCheQ Community"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- our services -->
+    <section class="our-services">
+      <div class="container">
+        <div class="header">
+          <span>Our Services</span>
+          <p>
+            Check out our services
+            <a class="line-under" href="services.html">here</a>
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="icon">
+              <i class="fas fa-store"></i>
+            </div>
+            <a href="services.html">
+              <img
+                src="https://foodcheq.coop/upload/p9zgkTX5FxVAEZ5QmDtG02ot5QOiZQ.jpg"
+                alt="Retailers"
+              />
+            </a>
+            <div class="details">
+              <a href="services.html" class="title">For Retailers</a>
+              <a href="services.html" class="learn-more">Learn More</a>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">
+              <i class="fas fa-truck-loading"></i>
+            </div>
+            <a href="services.html">
+              <img
+                src="https://foodcheq.coop/upload/tOjmlMxQ1uYxc8d9c9Wj8mxqcw6Ykw.jpg"
+                alt="Wholesale"
+              />
+            </a>
+            <div class="details">
+              <a href="services.html" class="title">For Wholesale</a>
+              <a href="services.html" class="learn-more">Learn More</a>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <a href="services.html">
+              <img
+                src="https://foodcheq.coop/upload/dFuVBQxsuFYzrHhdV9CPULn5RYGSnR.jpg"
+                alt="Suppliers"
+              />
+            </a>
+            <div class="details">
+              <a href="services.html" class="title">Suppliers</a>
+              <a href="services.html" class="learn-more">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- effortless shoping -->
+    <section class="effortless">
+      <div class="container">
+        <div class="text-content">
+          <span>Effortless Shopping Meets Reliable Shipping</span>
+        </div>
+
+        <div class="iframe-container">
+          <iframe
+            src="https://www.youtube.com/embed/CcIx2NtQoS0"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="cta">
+          <a href="sample.html" class="btn-primary"
+            >Not sure what to order? Get a free sample</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section class="Join-Us">
+      <div class="banner">
+        <div class="content">
+          <h2>SIGN UP TODAY</h2>
+          <p>
+            Join us now and get a <strong>free sample</strong> to start your
+            journey!
+          </p>
+          <a href="register.html" class="btn-primary">
+            <span>Sign Up & Get Free Sample</span>
+            <i class="icon icon-arrow1-top-left"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const blogPosts = document.querySelectorAll(".blog-post");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      blogPosts.forEach((post) => {
+        observer.observe(post);
+      });
+    </script>
+
+    <script>
+      document
+        .getElementById("currency")
+        .addEventListener("change", function () {
+          this.form.submit();
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light pt-5">
+      <div class="container">
+        <div class="row">
+          <!-- About Us -->
+          <div class="col-md-3 col-12 mb-4">
+            <h6 class="fw-bold">ABOUT US</h6>
+            <a href="https://foodcheq.coop">
+              <img
+                src="https://foodcheq.coop/upload/eSio9fKkSKNFqEeGkq6kRnJDhaFpE1.png"
+                alt="Logo"
+                class="img-fluid mb-2"
+                style="max-width: 150px"
+              />
+            </a>
+            <p class="small">
+              FoodCheQ is a subscription-based food logistics service for
+              individuals and businesses interested in the Agricultural sector
+              value chains, particularly organic Health and Wellness Foods.
+            </p>
+            <a href="about.html" class="btn btn-outline-success btn-sm mt-2"
+              >See More</a
+            >
+          </div>
+
+          <!-- Help -->
+          <div class="col-md-3 col-12 mb-4">
+            <h6 class="fw-bold">HELP</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a
+                  href="https://foodcheq.coop/privacy"
+                  class="text-light text-decoration-none"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/returns"
+                  class="text-light text-decoration-none"
+                  >Returns + Exchanges</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/shipping_delivery"
+                  class="text-light text-decoration-none"
+                  >Shipping + Delivery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/terms"
+                  class="text-light text-decoration-none"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/faq"
+                  class="text-light text-decoration-none"
+                  >FAQ's</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Navigation -->
+          <div class="col-md-3 col-12 mb-4">
+            <h6 class="fw-bold">QUICK NAVIGATION</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a href="about.html" class="text-light text-decoration-none"
+                  >Our Story</a
+                >
+              </li>
+              <li>
+                <a
+                  href="product-category.html"
+                  class="text-light text-decoration-none"
+                  >Visit Our Store</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/vendors"
+                  class="text-light text-decoration-none"
+                  >Our Partners</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/blog"
+                  class="text-light text-decoration-none"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/fedex_track"
+                  class="text-light text-decoration-none"
+                  >Track Shipment</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/contact"
+                  class="text-light text-decoration-none"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="login.html" class="text-light text-decoration-none"
+                  >Account</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Us -->
+          <div class="col-md-3 col-12 mb-4">
+            <h6 class="fw-bold">CONTACT US</h6>
+            <ul class="list-unstyled small">
+              <li class="mb-1">
+                Address: Plot A, Central Orchard Section, Okiloki Farm
+                Settlement, Abbi NWLGA, Delta State
+              </li>
+              <li class="mb-1">
+                Email:
+                <a
+                  href="mailto:team@foodcheq.coop"
+                  class="text-light text-decoration-none"
+                  >team@foodcheq.coop</a
+                >
+              </li>
+              <li class="mb-1">
+                Phone:
+                <a
+                  href="tel:+2349027921510"
+                  class="text-light text-decoration-none"
+                  >+2349027921510</a
+                >
+              </li>
+            </ul>
+            <a
+              href="https://foodcheq.coop/contact"
+              class="btn btn-outline-success btn-sm mt-2"
+              >Get Directions</a
+            >
+          </div>
+        </div>
+
+        <hr class="border-success" />
+
+        <!-- Footer Bottom -->
+        <div class="row">
+          <div class="col-12 text-center small text-muted">
+            © <span id="year"></span> FoodCheQ. All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+      <!-- Year Script -->
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+    </footer>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="searchOffcanvas">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Search Products</h5>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Cancel"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <input
+          type="text"
+          id="searchInput"
+          class="form-control mb-3"
+          placeholder="Search..."
+        />
+        <div
+          id="searchResults"
+          class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4"
+        ></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+    <script>
+      let allProducts = [];
+
+      fetch("/products.json")
+        .then((res) => res.json())
+        .then((data) => {
+          allProducts = data.categories.flatMap((c) => c.products);
+        });
+
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", function () {
+          const query = this.value.toLowerCase();
+          const results = allProducts.filter((p) =>
+            p.name.toLowerCase().includes(query)
+          );
+          renderResults(results);
+        });
+
+      function renderResults(list) {
+        const container = document.getElementById("searchResults");
+        container.innerHTML = "";
+        if (list.length === 0) {
+          container.innerHTML = `<p class="text-muted">No products found.</p>`;
+          return;
+        }
+        list.forEach((product) => {
+          container.innerHTML += `
+      <div class="col">
+        <div class="product-card">
+          <img src="${product.image}" alt="${product.name}">
+          <h5>${product.name} - $${product.price}${
+            product.unit ? "/" + product.unit : ""
+          }</h5>
+          <p>$${product.price.toFixed(2)}</p>
+          <button class="btn btn-green w-100 mb-2 add-to-cart">Add to Cart</button>
+        </div>
+      </div>`;
+        });
+        attachCartEvents(); // reuse your cart.js function
+      }
+    </script>
+  </body>
+</html>
