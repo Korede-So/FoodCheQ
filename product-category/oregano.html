@@ -1,34 +1,52 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Oregano Tea</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oregano Tea</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="/style.css">
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-<body>
-        <!-- Topline / Headline -->
-  <div class="headline d-flex justify-content-between align-items-center px-3">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+<!-- headline bar -->
+  <div class="headline">
     <div class="headline-text">
       <span>FREE SHIPPING AND RETURNS</span>
       <span>LIMITED TIME OFFER - SHOP NOW</span>
       <span>BECOME A PARTNER TODAY</span>
     </div>
 
-    <div class="headline-right d-flex align-items-center">
-      <ul class="headline-links d-flex me-3">
-        <li class="nav-item headline-link"><a href="request-logistics.html">Request<br>Logistics</a></li>
-        <li class="nav-item headline-link"><a href="become-partner.html">Become<br>a Partner</a></li>
+    <!-- Right side headline links + currency (desktop only) -->
+    <div class="headline-right d-none d-lg-flex">
+      <ul class="headline-links">
+        <li class="nav-item headline-link">
+          <a href="login.html">Request<br />Logistics</a>
+        </li>
+        <li class="nav-item headline-link">
+          <a href="register.html">Become<br />a Partner</a>
+        </li>
       </ul>
 
       <div class="tf-currencies">
         <form action="https://foodcheq.coop/set-currency" method="POST">
-          <input type="hidden" name="_token" value="">
-          <select id="currency" name="currency" class="form-control form-control-sm">
+          <input type="hidden" name="_token" value="hBap8p3Rj0gaLm42Yhgu4TZJH08MesPvE74ATfN9" />
+          <select id="currency" name="currency" onchange="this.form.submit()" class="form-control form-control-sm">
             <option value="USD" selected>USD ($)</option>
             <option value="NGN">NGN (₦)</option>
           </select>
@@ -36,153 +54,721 @@
       </div>
     </div>
   </div>
-   
-     <!-- Header / Nav -->
+
+  <!-- header -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
+        <!-- Logo -->
         <a class="navbar-brand" href="#">
-          <img src="https://foodcheq.coop/upload/eSio9fKkSKNFqEeGkq6kRnJDhaFpE1.png" alt="logo" class="logo">
+          <img src="https://foodcheq.coop/upload/eSio9fKkSKNFqEeGkq6kRnJDhaFpE1.png" alt="logo" class="logo" />
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
+        <!-- Hamburger toggle (mobile only) -->
+        <button class="navbar-toggler d-lg-none" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+                aria-controls="mobileMenu">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+        <!-- Desktop nav links -->
+        <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNavDropdown">
           <ul class="navbar-nav ms-auto">
+            <!-- Dropdown stays for desktop -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+              <a class="nav-link dropdown-toggle" href="#" id="menuDropdown"
+                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
+              </a>
               <ul class="dropdown-menu" aria-labelledby="menuDropdown">
-                <li><a class="dropdown-item" href="index.html">Home</a></li>
-                <li><a class="dropdown-item" href="about.html">About</a></li>
-                <li><a class="dropdown-item" href="product-category.html">Shop</a></li>
-                <li><a class="dropdown-item" href="request-sample.html">Request Sample</a></li>
+                <li><a class="dropdown-item" href="/index.html">Home</a></li>
+                <li><a class="dropdown-item" href="/about.html">About</a></li>
+                <li><a class="dropdown-item" href="/product-category.html">Shop</a></li>
+                <li><a class="dropdown-item" href="/sample.html">Request Sample</a></li>
+                <li><a class="dropdown-item" href="/wishlist.html">Wishlist</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link special-link" href="request-logistics.html">REQUEST <br>LOGISTICS</a></li>
-            <li class="nav-item"><a class="nav-link special-link" href="track-shipment.html">TRACK <br>SHIPMENT</a></li>
-            <li class="nav-item"><a class="nav-link special-link" href="become-partner.html">BECOME A <br>PARTNER</a></li>
+
+            <!-- Other desktop links -->
+            <li class="nav-item"><a class="nav-link special-link" href="/login.html">REQUEST <br> LOGISTICS</a></li>
+            <li class="nav-item"><a class="nav-link special-link" href="/track-shipment.html">TRACK <br> SHIPMENT</a></li>
+            <li class="nav-item"><a class="nav-link special-link" href="/register.html">BECOME A <br> PARTNER</a></li>
           </ul>
+
+          <!-- Header icons -->
           <div class="header-icons d-flex align-items-center ms-lg-3">
             <a href="#" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvas"><i class="fa-solid fa-magnifying-glass"></i></a>
-            <a href="login.html" class="ms-3"><i class="fa-solid fa-user"></i></a>
-            <a href="cart.html" class="position-relative ms-3" aria-label="View Cart"><i class="fa-solid fa-cart-shopping"></i>
+            <a href="/login.html"><i class="fa-solid fa-user"></i></a>
+            <a href="/cart.html" class="position-relative"><i class="fa-solid fa-cart-shopping"></i>
               <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span>
             </a>
           </div>
         </div>
       </div>
     </nav>
-  </header>
-  <div class="container product-section">
+              </header>
 
-    <div class="row align-items-center g-4">
-      <div class="col-md-6">
-        <img src="/image/Oregano tea.png" class="product-img" alt="aloe vera tea">
+              <!-- Mobile offcanvas menu -->
+              <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="mobileMenu">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title">Menu</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <!-- Search bar for mobile -->
+                  <form class="mb-3">
+                    <input type="text" class="form-control" placeholder="Search products..." id="mobileSearchInput">
+                  </form>
+
+                  <!-- Main nav -->
+                  <ul class="navbar-nav mb-4">
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/product-category.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/sample.html">Request Sample</a></li>
+                  </ul>
+
+                  <!-- Special links (mobile only) -->
+                  <div class="mb-3">
+                    <a class="nav-link fw-bold text-warning" href="/login.html">Request Logistics</a>
+                    <a class="nav-link fw-bold text-warning" href="/register.html">Become a Partner</a>
+                  </div>
+
+                  <!-- Currency selector (mobile only) -->
+                  <div class="mb-3">
+                    <form action="https://foodcheq.coop/set-currency" method="POST">
+                      <input type="hidden" name="_token" value="hBap8p3Rj0gaLm42Yhgu4TZJH08MesPvE74ATfN9" />
+                      <select id="currencyMobile" name="currency" onchange="this.form.submit()" class="form-control">
+                        <option value="USD" selected>USD ($)</option>
+                        <option value="NGN">NGN (₦)</option>
+                      </select>
+                    </form>
+                  </div>
+
+                  <!-- Mobile header icons -->
+                  <div class="d-flex justify-content-around">
+                    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvas"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="/login.html"><i class="fa-solid fa-user"></i></a>
+                    <a href="/wishlist.html" class="position-relative" aria-label="View Wishlist">
+                      <i class="fa-regular fa-heart"></i>
+                      <span id="wishlistCountMobile" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                    </a>
+                    <a href="/cart.html" class="position-relative" aria-label="View Cart">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                      <span id="cartCountMobile" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              
+
+
+
+
+ <!-- Product Section -->
+<div class="container product-section py-5">
+  <div class="row align-items-center g-4">
+    <div class="col-md-6 text-center">
+      <img src="/images/Oregano-Tea.png" class="img-fluid rounded shadow-sm" alt="Oregano Tea">
+    </div>
+
+    <div class="col-md-6">
+      <h2 class="fw-bold"> Oregano <span class="text-success">- $3 / 50g </span></h2>
+      <p class="text-muted">
+Oregano is beneficial to Gastrointestinal system and Dermatological system 
+
+#Acne #Eczema #Psoriasis #Skin Cancer #Alopecia #Vitiligo #Cold sores #Constipation
+        
+      </p>
+
+      <p class="price h4 text-success fw-bold">$3.00</p>
+
+      <div class="d-flex flex-wrap gap-2 mt-3 justify-content-between">
+        <button class="btn btn-green add-to-cart flex-fill"
+        data-name="Oregano"
+        data-price="3.00"
+        data-image="/images/Oregano-png.jpg"
+        data-qty="1">
+        <i class="fa-solid fa-cart-shopping me-1"></i> Add to Cart
+      </button>
+
+      <button class="btn btn-outline-success add-to-wishlist" data-name="Oregano" data-price="3.00" data-image="/images/Oregano-Tea.jpg">
+        <i class="fa-regular fa-heart me-1"></i> Wishlist
+      </button>
+
+      <button class="btn btn-outline-success flex-fill">
+        <i class="fa-solid fa-mug-hot me-1"></i> Free Sample
+      </button>
+    </div>
+
+  </div>
+  </div>
+
+  <!-- Details -->
+  <div class="details mt-5">
+    <h4 class="fw-bold mb-3">Product Description</h4>
+    <p>
+          Oregano is rich in antioxidants and has natural antimicrobial properties, helping fight bacteria and reduce inflammation
+
+    </p>
+
+    <h4 class="fw-bold mt-4 mb-3">Health Benefits</h4>
+    <ul class="list-unstyled">
+      <li>✔ Antioxidant power: Protects cells from damage caused by free radicals.</li>
+      <li>✔ Anti-inflammatory effects: May help reduce swelling and discomfort.</li>
+      <li>✔ Antimicrobial properties: Can fight certain bacteria and support immune health.</li>
+      <li>✔ Nutrient boost: A teaspoon of dried oregano provides about 8% of daily vitamin K needs.</li>
+    </ul>
+  </div>
+
+  <!-- Related Items -->
+  <h3 id="related-title" class="fw-bold mt-5 mb-4">Related Items</h3>
+  <div class="row g-3" id="relatedItems">
+
+    <!-- Baobab -->
+    <div class="col-6 col-md-3 col-lg-2">
+      <div class="card shadow-sm text-center p-2 h-100">
+        <a href="baobab.html">
+          <img src="/images/Baobab.jpg" class="img-fluid mb-2" alt="Baobab">
+          <h6>Baobab - $3/200g</h6>
+        </a>
+        <p class="text-success fw-bold">$3.00</p>
+        <button class="btn btn-green btn-sm add-to-cart"
+          data-name="Baobab"
+          data-price="3.00"
+          data-image="/images/Baobab.jpg"
+          data-qty="1">
+          Add to Cart
+        </button>
       </div>
+    </div>
 
-      <div class="col-md-6 product-content">
-        <h2>Oregano-$3/50g</h2>
-        <p>Oregano is beneficial to Gastrointestinal system and Dermatological system 
+    <!-- Lavender -->
+    <div class="col-6 col-md-3 col-lg-2">
+      <div class="card shadow-sm text-center p-2 h-100">
+        <a href="lavender.html">
+          <img src="/images/Laveneder.png" class="img-fluid mb-2" alt="Lavender">
+          <h6>Lavender - $15/120g</h6>
+        </a>
+        <p class="text-success fw-bold">$15.00</p>
+        <button class="btn btn-green btn-sm add-to-cart"
+          data-name="Lavender"
+          data-price="15.00"
+          data-image="/images/Lavender-Tea.png"
+          data-qty="1">
+          Add to Cart
+        </button>
+      </div>
+    </div>
 
-#Acne #Eczema #Psoriasis #Skin Cancer #Alopecia #Vitiligo #Cold sores #Constipation</p>
+    <!-- Aloe Vera Tea -->
+    <div class="col-6 col-md-3 col-lg-2">
+      <div class="card shadow-sm text-center p-2 h-100">
+        <a href="aloe-vera.html">
+          <img src="/images/Aloe-Vera-Tea.png" class="img-fluid mb-2" alt="Aloe Vera Tea">
+          <h6>Aloe Vera Tea - $20/kg</h6>
+        </a>
+        <p class="text-success fw-bold">$20.00</p>
+        <button class="btn btn-green btn-sm add-to-cart"
+          data-name="Aloe Vera Tea"
+          data-price="20.00"
+          data-image="/images/Aloe-Vera-Tea.png"
+          data-qty="1">
+          Add to Cart
+        </button>
+      </div>
+    </div>
 
-        <p class="price">$3.00</p>
+    <!-- Clove -->
+    <div class="col-6 col-md-3 col-lg-2">
+      <div class="card shadow-sm text-center p-3">
+        <a href="product-clove.html">
+          <img src="/images/Clove-Powder.jpg" class="img-fluid mb-2" alt="Clove">
+          <h6>Clove - $4/50g</h6>
+        </a>
+        <p class="text-success fw-bold">$4.00</p>
+        <button class="btn btn-green btn-sm add-to-cart"
+          data-name="Clove"
+          data-price="4.00"
+          data-image="/images/Clove-Powder.jpg"
+          data-qty="1">
+          Add to Cart
+        </button>
+      </div>
+    </div>
 
-        <div class="d-flex gap-3 flex-wrap">
-          <div class="product-actions">
-            <button class="btn-green"><i class="fa-solid fa-cart-shopping me-1"></i> Add to Cart</button>
-            <button class="btn-outline-success"><i class="fa-regular fa-heart me-1"></i> Wishlist</button>
-            <button class="btn-outline-success"><i class="fa-solid fa-mug-hot me-1"></i> Free Sample</button>
+  </div>
+</div>
+
+
+
+<!-- Customer Reviews -->
+<section class="container reviews-section">
+  <h3>Customer Reviews</h3>
+  <div class="row g-1" id="reviewsList">
+
+    <div class="col-md-3 col-sm-6">
+      <div class="card card-review shadow-sm p-2">
+        <div class="d-flex align-items-center mb-2">
+          <img src="" class="rounded-circle me-2" width="35" alt="Reviewer">
+        <div>
+          <h6 class="mb-0 text-success small">Olivia R..</h6>
+          <small class="text-muted">Verified Buyer</small>
+        </div>
+        </div>
+      <p class="small">"Lovely aromatic tea — helped my seasonal sniffles."</p>
+      <div class="rating text-warning small">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+      </div>
+    </div>
+    </div>
+
+    <!-- Review 2 -->
+    <div class="col-md-3 col-sm-6">
+      <div class="card card-review shadow-sm p-2">
+        <div class="d-flex align-items-center mb-2">
+          <img src="" class="rounded-circle me-2" width="35" alt="Reviewer">
+          <div>
+            <h6 class="mb-0 text-success small">Henry K.</h6>
+            <small class="text-muted">Verified Buyer</small>
           </div>
+        </div>
+        <p class="small">"Great flavour and noticeable respiratory support."</p>
+        <div class="rating text-warning small">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
         </div>
       </div>
     </div>
 
-    <div class="details">
-      <h4>Product Description</h4>
-    <p></p>
-
-      <h4>Health Benefits</h4>
-      <ul>
-       
-      </ul>
-    </div>
-
-    <h3 id="related-title">Related Items</h3>
-
-    <div class="related-wrapper"></div>
-      <div class="related-grid row g-4">
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="card shadow-sm">
-            <img src="/image/baobab.png">
-            <h6>Baobab - $3/200g</h6>
-            <p class="text-success fw-bold">$3.00</p>
-            <button class="btn-green mb-2">Add to Cart</button>
+    <!-- Review 3 -->
+    <div class="col-md-3 col-sm-6">
+      <div class="card card-review shadow-sm p-2">
+        <div class="d-flex align-items-center mb-2">
+          <img src="" class="rounded-circle me-2" width="35" alt="Reviewer">
+          <div>
+            <h6 class="mb-0 text-success small">Sophia M.</h6>
+            <small class="text-muted">Verified Buyer</small>
           </div>
         </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="card shadow-sm">
-            <img src="/image/laveneder tea.png">
-            <h6>Lavender - $15/120g</h6>
-            <p class="text-success fw-bold">$15.00</p>
-            <button class="btn-green mb-2">Add to Cart</button>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="card shadow-sm">
-            <img src="/image/Skullscap tea.png">
-            <h6>Skullcap - $12/50g</h6>
-            <p class="text-success fw-bold">$12.00</p>
-            <button class="btn-green mb-2">Add to Cart</button>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="card shadow-sm">
-            <img src="/image/clove powder tea.png">
-            <h6>Clove - $4/50g</h6>
-            <p class="text-success fw-bold">$4.00</p>
-            <button class="btn-green mb-2">Add to Cart</button>
-          </div>
-        </div>
-
-      </div>
-  </section>
-
-  <section class="container mt-5">
-    <h3 class="text-center mb-4" style="color: var(--main-green); font-weight:700;">Customer Reviews</h3>
-    <div class="row g-4">
-      <!-- Customer Review 1 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card card-review shadow-sm">
-          <h6 class="mb-0" style="color: var(--main-green);">Olivia R.</h6>
-          <p>"Lovely aromatic tea — helped my seasonal sniffles."</p>
-          <div class="text-warning">★★★★★</div>
-        </div>
-      </div>
-      <!-- Customer Review 2 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card card-review shadow-sm">
-          <h6 class="mb-0" style="color: var(--main-green);">Henry K.</h6>
-          <p>"Great flavour and noticeable respiratory support."</p>
-          <div class="text-warning">★★★★★</div>
-        </div>
-      </div>
-      <!-- Customer Review 3 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="card card-review shadow-sm">
-          <h6 class="mb-0" style="color: var(--main-green);">Sophia M.</h6>
-          <p>"Pleasant tea, useful addition to my herbal routine."</p>
-          <div class="text-warning">★★★★☆</div>
+        <p class="small">"Pleasant tea, useful addition to my herbal routine."</p>
+        <div class="rating text-warning small">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<section class="container review-form mt-4">
+  <h5>Leave a Review</h5>
+  <form id="reviewForm">
+    <div class="mb-2">
+      <input type="text" class="form-control form-control-sm" id="reviewName" placeholder="Your name" required>
+    </div>
+    <div class="mb-2">
+      <div class="rating text-warning" id="starRating">
+        <i class="fa-regular fa-star" data-value="1"></i>
+        <i class="fa-regular fa-star" data-value="2"></i>
+        <i class="fa-regular fa-star" data-value="3"></i>
+        <i class="fa-regular fa-star" data-value="4"></i>
+        <i class="fa-regular fa-star" data-value="5"></i>
+      </div>
+      <input type="hidden" id="ratingValue" name="rating" value="0">
+    </div>
+    <div class="mb-2">
+      <textarea class="form-control form-control-sm" id="reviewComment" rows="2" placeholder="Write your review..." required></textarea>
+    </div>
+    <button type="submit" class="btn btn-green btn-sm">Submit</button>
+  </form>
+</section>
+
+
+
+ <!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- FontAwesome JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+<!-- Load products for search -->
+<script>
+  let allProducts = [];
+
+  fetch("/products.json")
+    .then(res => res.json())
+    .then(data => {
+      allProducts = data.categories.flatMap(c => c.products);
+    });
+</script>
+
+<!-- Cart + Wishlist logic -->
+<script src="/cart.js"></script>
+
+<!-- Mobile search logic -->
+<script>
+  document.getElementById("mobileSearchInput").addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+    const results = allProducts.filter(p => p.name.toLowerCase().includes(query));
+    renderMobileResults(results);
+  });
+
+  function renderMobileResults(list) {
+    const container = document.getElementById("mobileSearchResults");
+    container.innerHTML = "";
+    if (list.length === 0) {
+      container.innerHTML = `<p class="text-muted">No products found.</p>`;
+      return;
+    }
+    list.forEach(product => {
+      container.innerHTML += `
+        <div class="col">
+          <div class="card shadow-sm p-2 text-center">
+            <img src="${product.image}" alt="${product.name}" class="img-fluid mb-2" style="height:100px;object-fit:cover;">
+            <h6>${product.name}</h6>
+            <p class="text-success fw-bold">$${product.price.toFixed(2)}</p>
+            <button class="btn btn-green btn-sm add-to-cart"
+              data-name="${product.name}"
+              data-price="${product.price}"
+              data-image="${product.image}"
+              data-qty="1">Add to Cart</button>
+          </div>
+        </div>`;
+    });
+
+    // Attach cart events to new buttons
+    document.querySelectorAll("#mobileSearchResults .add-to-cart").forEach(btn => {
+      btn.addEventListener("click", function() {
+        const product = {
+          name: this.dataset.name,
+          price: parseFloat(this.dataset.price),
+          image: this.dataset.image,
+          qty: parseInt(this.dataset.qty)
+        };
+        addToCart(product);
+        alert(product.name + " added to cart!");
+      });
+    });
+  }
+</script> 
+
+<!-- Footer -->
+    <footer class="bg-dark text-light pt-5">
+      <div class="container">
+        <div class="row">
+          <!-- About Us -->
+          <div class="col-md-3 col-12 mb-4">
+            <h6 class="fw-bold">ABOUT US</h6>
+            <a href="https://foodcheq.coop">
+              <img
+                src="https://foodcheq.coop/upload/eSio9fKkSKNFqEeGkq6kRnJDhaFpE1.png"
+                alt="Logo"
+                class="img-fluid mb-2"
+                style="max-width: 150px"
+              />
+            </a>
+            <p class="small">
+              FoodCheQ is a technology driven herbal agro-processing company
+              that transforms traditional medicinal crops into standardized,
+              export-ready foods and extracts while empowering smallholder
+              farmers through a cooperative and traceable supply chain.
+            </p>
+            <a href="about.html" class="btn btn-outline-success btn-sm mt-2"
+              >See More</a
+            >
+          </div>
+
+          <!-- Help -->
+          <div class="col-md-3 col-12 mb-4">
+            <h6 class="fw-bold">HELP</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a
+                  href="https://foodcheq.coop/privacy"
+                  class="text-light text-decoration-none"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/returns"
+                  class="text-light text-decoration-none"
+                  >Returns + Exchanges</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/shipping_delivery"
+                  class="text-light text-decoration-none"
+                  >Shipping + Delivery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/terms"
+                  class="text-light text-decoration-none"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/faq"
+                  class="text-light text-decoration-none"
+                  >FAQ's</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Navigation -->
+          <div class="col-md-3 col-12 mb-4">
+            <h6 class="fw-bold">QUICK NAVIGATION</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a href="about.html" class="text-light text-decoration-none"
+                  >Our Story</a
+                >
+              </li>
+              <li>
+                <a
+                  href="product-category.html"
+                  class="text-light text-decoration-none"
+                  >Visit Our Store</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/vendors"
+                  class="text-light text-decoration-none"
+                  >Our Partners</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/blog"
+                  class="text-light text-decoration-none"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/fedex_track"
+                  class="text-light text-decoration-none"
+                  >Track Shipment</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/contact"
+                  class="text-light text-decoration-none"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="login.html" class="text-light text-decoration-none"
+                  >Account</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Us -->
+          <div class="col-md-3 col-12 mb-4">
+            <h6 class="fw-bold">CONTACT US</h6>
+            <ul class="list-unstyled small">
+              <li class="mb-1">
+                Address: Plot A, Central Orchard Section, Okiloki Farm
+                Settlement, Abbi NWLGA, Delta State
+              </li>
+              <li class="mb-1">
+                Email:
+                <a
+                  href="mailto:team@foodcheq.coop"
+                  class="text-light text-decoration-none"
+                  >team@foodcheq.coop</a
+                >
+              </li>
+              <li class="mb-1">
+                Phone:
+                <a
+                  href="tel:+2349027921510"
+                  class="text-light text-decoration-none"
+                  >+2349027921510</a
+                >
+              </li>
+            </ul>
+            <a
+              href="https://foodcheq.coop/contact"
+              class="btn btn-outline-success btn-sm mt-2"
+              >Get Directions</a
+            >
+          </div>
+        </div>
+
+        <hr class="border-success" />
+
+        <!-- Footer Bottom -->
+        <div class="row">
+          <div class="col-12 text-center small text-muted">
+            © <span id="year"></span> FoodCheQ. All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+      <!-- Year Script -->
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+    </footer>
+
+
+
+
 </body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const stars = document.querySelectorAll("#starRating i");
+    const ratingValue = document.getElementById("ratingValue");
+    const reviewForm = document.getElementById("reviewForm");
+    const reviewsList = document.getElementById("reviewsList");
+
+    // Load saved reviews from localStorage
+    const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+    savedReviews.forEach(r => appendReview(r.name, r.comment, r.rating));
+
+    // Star click handler
+    stars.forEach(star => {
+      star.addEventListener("click", function () {
+        const value = this.getAttribute("data-value");
+        ratingValue.value = value;
+        stars.forEach(s => s.classList.replace("fa-solid", "fa-regular"));
+        for (let i = 0; i < value; i++) {
+          stars[i].classList.replace("fa-regular", "fa-solid");
+        }
+      });
+    });
+
+    // Form submit handler
+    reviewForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("reviewName").value;
+      const comment = document.getElementById("reviewComment").value;
+      const rating = ratingValue.value;
+
+      if (rating == 0) {
+        alert("Please select a rating.");
+        return;
+      }
+
+      appendReview(name, comment, rating);
+
+      // Save to localStorage
+      savedReviews.push({ name, comment, rating });
+      localStorage.setItem("reviews", JSON.stringify(savedReviews));
+
+      // Reset form
+      reviewForm.reset();
+      ratingValue.value = 0;
+      stars.forEach(s => s.classList.replace("fa-solid", "fa-regular"));
+    });
+
+    // Helper function to render stars
+    function renderStars(rating) {
+      let html = "";
+      for (let i = 1; i <= 5; i++) {
+        html += i <= rating ? '<i class="fa-solid fa-star"></i>' : '<i class="fa-regular fa-star"></i>';
+      }
+      return html;
+    }
+
+    // Helper function to append review
+    function appendReview(name, comment, rating) {
+      const col = document.createElement("div");
+      col.className = "col-md-4 col-sm-6";
+      col.innerHTML = `
+        <div class="card card-review shadow-sm p-2">
+          <div class="d-flex align-items-center mb-2">
+            <img src="" class="rounded-circle me-2" width="40" alt="Reviewer">
+            <div>
+              <h6 class="mb-0 text-success small">${name}</h6>
+              <small class="text-muted">New Reviewer</small>
+            </div>
+          </div>
+          <p class="small">"${comment}"</p>
+          <div class="rating text-warning small">
+            ${renderStars(rating)}
+          </div>
+        </div>
+      `;
+      reviewsList.appendChild(col);
+    }
+  });
+</script>
+
+
+<script>
+  document.getElementById("mobileSearchInput").addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+    const results = allProducts.filter(p => p.name.toLowerCase().includes(query));
+    renderMobileResults(results);
+  });
+
+  function renderMobileResults(list) {
+    const container = document.getElementById("mobileSearchResults");
+    container.innerHTML = "";
+    if (list.length === 0) {
+      container.innerHTML = `<p class="text-muted">No products found.</p>`;
+      return;
+    }
+    list.forEach(product => {
+      container.innerHTML += `
+        <div class="col">
+          <div class="card shadow-sm p-2 text-center">
+            <img src="${product.image}" alt="${product.name}" class="img-fluid mb-2" style="height:100px;object-fit:cover;">
+            <h6>${product.name}</h6>
+            <p class="text-success fw-bold">$${product.price.toFixed(2)}</p>
+            <button class="btn btn-green btn-sm add-to-cart"
+              data-name="${product.name}"
+              data-price="${product.price}"
+              data-image="${product.image}"
+              data-qty="1">Add to Cart</button>
+          </div>
+        </div>`;
+    });
+
+    // Reattach cart events
+    document.querySelectorAll("#mobileSearchResults .add-to-cart").forEach(btn => {
+      btn.addEventListener("click", function() {
+        const product = {
+          name: this.dataset.name,
+          price: parseFloat(this.dataset.price),
+          image: this.dataset.image,
+          qty: parseInt(this.dataset.qty)
+        };
+        addToCart(product);
+        alert(product.name + " added to cart!");
+      });
+    });
+  }
+</script>
+
+
 </html>
+
 

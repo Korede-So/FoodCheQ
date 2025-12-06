@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -12,24 +12,29 @@
 
 <body>
 
-  <!-- Topline / Headline -->
-  <div class="headline d-flex justify-content-between align-items-center px-3">
+ <!-- headline bar -->
+  <div class="headline">
     <div class="headline-text">
       <span>FREE SHIPPING AND RETURNS</span>
       <span>LIMITED TIME OFFER - SHOP NOW</span>
       <span>BECOME A PARTNER TODAY</span>
     </div>
 
-    <div class="headline-right d-flex align-items-center">
-      <ul class="headline-links d-flex me-3">
-        <li class="nav-item headline-link"><a href="request-logistics.html">Request<br>Logistics</a></li>
-        <li class="nav-item headline-link"><a href="become-partner.html">Become<br>a Partner</a></li>
+    <!-- Right side headline links + currency (desktop only) -->
+    <div class="headline-right d-none d-lg-flex">
+      <ul class="headline-links">
+        <li class="nav-item headline-link">
+          <a href="login.html">Request<br />Logistics</a>
+        </li>
+        <li class="nav-item headline-link">
+          <a href="register.html">Become<br />a Partner</a>
+        </li>
       </ul>
 
       <div class="tf-currencies">
         <form action="https://foodcheq.coop/set-currency" method="POST">
-          <input type="hidden" name="_token" value="">
-          <select id="currency" name="currency" class="form-control form-control-sm">
+          <input type="hidden" name="_token" value="hBap8p3Rj0gaLm42Yhgu4TZJH08MesPvE74ATfN9" />
+          <select id="currency" name="currency" onchange="this.form.submit()" class="form-control form-control-sm">
             <option value="USD" selected>USD ($)</option>
             <option value="NGN">NGN (₦)</option>
           </select>
@@ -37,35 +42,51 @@
       </div>
     </div>
   </div>
-   
+
+  <!-- header -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
+        <!-- Logo -->
         <a class="navbar-brand" href="#">
-          <img src="https://foodcheq.coop/upload/eSio9fKkSKNFqEeGkq6kRnJDhaFpE1.png" alt="logo" class="logo">
+          <img src="https://foodcheq.coop/upload/eSio9fKkSKNFqEeGkq6kRnJDhaFpE1.png" alt="logo" class="logo" />
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
+        <!-- Hamburger toggle (mobile only) -->
+        <button class="navbar-toggler d-lg-none" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+                aria-controls="mobileMenu">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+        <!-- Desktop nav links -->
+        <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNavDropdown">
           <ul class="navbar-nav ms-auto">
+            <!-- Dropdown stays for desktop -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+              <a class="nav-link dropdown-toggle" href="#" id="menuDropdown"
+                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
+              </a>
               <ul class="dropdown-menu" aria-labelledby="menuDropdown">
                 <li><a class="dropdown-item" href="index.html">Home</a></li>
                 <li><a class="dropdown-item" href="about.html">About</a></li>
                 <li><a class="dropdown-item" href="product-category.html">Shop</a></li>
-                <li><a class="dropdown-item" href="request-sample.html">Request Sample</a></li>
+                <li><a class="dropdown-item" href="sample.html">Request Sample</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link special-link" href="request-logistics.html">REQUEST <br>LOGISTICS</a></li>
-            <li class="nav-item"><a class="nav-link special-link" href="track-shipment.html">TRACK <br>SHIPMENT</a></li>
-            <li class="nav-item"><a class="nav-link special-link" href="become-partner.html">BECOME A <br>PARTNER</a></li>
+
+            <!-- Other desktop links -->
+            <li class="nav-item"><a class="nav-link special-link" href="login.html">REQUEST <br> LOGISTICS</a></li>
+            <li class="nav-item"><a class="nav-link special-link" href="track-shipment.html">TRACK <br> SHIPMENT</a></li>
+            <li class="nav-item"><a class="nav-link special-link" href="register.html">BECOME A <br> PARTNER</a></li>
           </ul>
+
+          <!-- Header icons -->
           <div class="header-icons d-flex align-items-center ms-lg-3">
             <a href="#" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvas"><i class="fa-solid fa-magnifying-glass"></i></a>
-            <a href="login.html" class="ms-3"><i class="fa-solid fa-user"></i></a>
-            <a href="cart.html" class="position-relative ms-3" aria-label="View Cart"><i class="fa-solid fa-cart-shopping"></i>
+            <a href="login.html"><i class="fa-solid fa-user"></i></a>
+            <a href="cart.html" class="position-relative"><i class="fa-solid fa-cart-shopping"></i>
               <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span>
             </a>
           </div>
@@ -73,6 +94,63 @@
       </div>
     </nav>
   </header>
+
+  <!-- Mobile offcanvas menu -->
+  <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- Search bar for mobile -->
+      <form class="mb-3">
+        <input type="text" class="form-control" placeholder="Search products..." id="mobileSearchInput">
+      </form>
+
+      <!-- Main nav -->
+      <ul class="navbar-nav mb-4">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="product-category.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="sample.html">Request Sample</a></li>
+      </ul>
+
+      <!-- Special links (mobile only) -->
+      <div class="mb-3">
+        <a class="nav-link fw-bold text-warning" href="login.html">Request Logistics</a>
+        <a class="nav-link fw-bold text-warning" href="register.html">Become a Partner</a>
+      </div>
+
+      <!-- Currency selector (mobile only) -->
+      <div class="mb-3">
+        <form action="https://foodcheq.coop/set-currency" method="POST">
+          <input type="hidden" name="_token" value="hBap8p3Rj0gaLm42Yhgu4TZJH08MesPvE74ATfN9" />
+          <select id="currencyMobile" name="currency" onchange="this.form.submit()" class="form-control">
+            <option value="USD" selected>USD ($)</option>
+            <option value="NGN">NGN (₦)</option>
+          </select>
+        </form>
+      </div>
+
+      <!-- Mobile header icons -->
+      <div class="d-flex justify-content-around">
+        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvas"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="login.html"><i class="fa-solid fa-user"></i></a>
+        <a href="cart.html" class="position-relative" aria-label="View Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cartCountMobile" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
   <div class="container product-section">
 
     <div class="row align-items-center g-4">
@@ -265,5 +343,6 @@ Dermatological system and Hepatic System
 </body>
 
 </html>
+
 
 

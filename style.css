@@ -38,35 +38,29 @@ body {
   color: white;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 14px;
-  height: 40px;
+  font-size: 19px;
+  height: 42px;
   
   display: flex;
-  justify-content: center; /* centers text block */
+  justify-content: center; 
   align-items: center;
   position: relative;
 }
 
-/* CENTERED ANIMATED TEXT */
-.headline-text {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 40px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .headline-text span {
   position: absolute;
   left: 50%;
+  top: 10%;
+  justify-content: center;
+  align-items: center;
   transform: translateX(-50%) translateY(100%);
   opacity: 0;
   animation: slideText 9s infinite;
+  animation-timing-function: ease-in-out;
   white-space: nowrap;
 }
+
 
 .headline-text span:nth-child(1) { animation-delay: 0s; }
 .headline-text span:nth-child(2) { animation-delay: 3s; }
@@ -233,6 +227,7 @@ nav a:hover {
 .dropdown-menu {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: transparent;
 }
 
 .dropdown-item {
@@ -1127,6 +1122,11 @@ body {
   color: #333;
 }
 
+.feature-icon img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 
 /*Product section*/
@@ -1429,6 +1429,8 @@ body {
 .sample-cta h3 {
   font-weight: 600;
 }
+
+
 
 
 /* foodcheq difference cta button*/
@@ -3061,3 +3063,215 @@ body {
   white-space: nowrap;
 }
 
+
+
+
+/* Full mobile menu */
+.offcanvas {
+  background-color: #198754; /* brand green */
+  color: #fff;
+}
+
+.offcanvas .offcanvas-title {
+  font-weight: 700;
+  color: #fff;
+}
+
+.offcanvas .nav-link {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.offcanvas .nav-link:hover {
+  color: #ffd700; /* gold highlight */
+}
+
+.offcanvas .btn-close {
+  filter: invert(1); /* white close icon */
+}
+
+
+.offcanvas .d-flex a {
+  color: #fff;
+  font-size: 1.4rem;
+  position: relative;
+}
+
+.offcanvas .d-flex a:hover {
+  color: #ffd700;
+}
+
+.offcanvas .badge {
+  font-size: 0.75rem;
+}
+
+
+@media (max-width: 576px) {
+  .headline {
+    height: 30px; /* taller so text fits */
+    font-size: 16px; /* slightly smaller font */
+  }
+  .headline-text span {
+    top: 0; /* align better */
+    transform: translateX(-50%) translateY(0); /* prevent clipping */
+  }
+}
+
+
+
+/* ================================
+   Reviews Section
+   ================================ */
+.reviews-section {
+  padding: 2rem 1rem;
+  background: #f9f9f9;
+}
+
+.reviews-section h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand-color, #198754);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Review cards */
+.card-review {
+  max-width: 250px;
+  margin: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  padding: 0.75rem;
+  font-size: 0.85rem; /* smaller text */
+  transition: transform 0.2s ease;
+}
+
+.card-review:hover {
+  transform: translateY(-3px);
+}
+
+.card-review img {
+  width: 35px; /* smaller avatar */
+  height: 35px;
+  object-fit: cover;
+}
+
+.card-review h6 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.card-review p {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Star rating */
+.rating i {
+  font-size: 0.8rem;
+  margin-right: 2px;
+  color: #ffc107; /* Bootstrap warning gold */
+}
+
+/* Review form */
+.review-form {
+  margin-top: 2rem;
+}
+
+.review-form h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.review-form input,
+.review-form textarea {
+  font-size: 0.85rem;
+  padding: 6px 10px;
+}
+
+.review-form button {
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .card-review {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+
+  .card-review img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .rating i {
+    font-size: 0.8rem;
+  }
+}
+
+.product-section .d-flex {
+  flex-direction: row;       /* force side-by-side */
+}
+
+.product-image img {
+  max-width: 150px;          /* control image size on mobile */
+}
+
+@media (max-width: 576px) {
+  .product-section .d-flex {
+    flex-direction: row;     /* keep row layout even on small screens */
+  }
+  .product-image img {
+    max-width: 120px;        /* shrink further for very small screens */
+  }
+    .product-section .d-flex button {
+    font-size: 0.8rem;   /* smaller text on mobile */
+    padding: 6px;        /* tighter padding */
+  }
+}
+
+
+
+#relatedItems .card {
+  height: 100%;              /* stretch evenly */
+  display: flex;
+  flex-direction: column;    /* stack content */
+  justify-content: space-between; /* push button to bottom */
+}
+
+
+#relatedItems .card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;   /* crop nicely */
+  margin: 0 auto 8px;  /* center image */
+}
+
+
+#relatedItems .card h6 {
+  font-size: 0.9rem;        /* smaller title */
+  margin: 4px 0;
+}
+
+#relatedItems .card p {
+  font-size: 0.85rem;       /* smaller price text */
+  margin-bottom: 6px;
+}
+
+#relatedItems .card button {
+  font-size: 0.75rem;       /* smaller button */
+  padding: 4px 10px;
+}

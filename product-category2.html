@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -24,8 +24,7 @@
   </head>
 
   <body>
-    <!-- header -->
-
+    <!-- headline bar -->
     <div class="headline">
       <div class="headline-text">
         <span>FREE SHIPPING AND RETURNS</span>
@@ -33,7 +32,8 @@
         <span>BECOME A PARTNER TODAY</span>
       </div>
 
-      <div class="headline-right">
+      <!-- Right side headline links + currency (desktop only) -->
+      <div class="headline-right d-none d-lg-flex">
         <ul class="headline-links">
           <li class="nav-item headline-link">
             <a href="login.html">Request<br />Logistics</a>
@@ -64,6 +64,7 @@
       </div>
     </div>
 
+    <!-- header -->
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -76,23 +77,24 @@
             />
           </a>
 
-          <!-- Hamburger toggle (mobile) -->
+          <!-- Hamburger toggle (mobile only) -->
           <button
-            class="navbar-toggler"
+            class="navbar-toggler d-lg-none"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu"
+            aria-controls="mobileMenu"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <!-- Collapsible nav links -->
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <!-- Desktop nav links -->
+          <div
+            class="collapse navbar-collapse d-none d-lg-flex"
+            id="navbarNavDropdown"
+          >
             <ul class="navbar-nav ms-auto">
-              <!-- Dropdown Menu -->
+              <!-- Dropdown stays for desktop -->
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -117,23 +119,29 @@
                       >Request Sample</a
                     >
                   </li>
+                  <li>
+                    <a class="dropdown-item" href="wishlist.html">Wishlist</a>
+                  </li>
                 </ul>
               </li>
 
-              <!-- Other links -->
+              <!-- Other desktop links -->
               <li class="nav-item">
                 <a class="nav-link special-link" href="login.html"
-                  >REQUEST <br />LOGISTICS</a
+                  >REQUEST <br />
+                  LOGISTICS</a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-link special-link" href="track-shipment.html"
-                  >TRACK <br />SHIPMENT</a
+                  >TRACK <br />
+                  SHIPMENT</a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-link special-link" href="register.html"
-                  >BECOME A <br />PARTNER</a
+                  >BECOME A <br />
+                  PARTNER</a
                 >
               </li>
             </ul>
@@ -144,18 +152,11 @@
                 href="#"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#searchOffcanvas"
-              >
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </a>
-              <a href="login.html" aria-label="Login"
-                ><i class="fa-solid fa-user"></i
+                ><i class="fa-solid fa-magnifying-glass"></i
               ></a>
-              <a
-                href="cart.html"
-                class="position-relative"
-                aria-label="View Cart"
-              >
-                <i class="fa-solid fa-cart-shopping"></i>
+              <a href="login.html"><i class="fa-solid fa-user"></i></a>
+              <a href="cart.html" class="position-relative"
+                ><i class="fa-solid fa-cart-shopping"></i>
                 <span
                   id="cartCount"
                   class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
@@ -167,6 +168,113 @@
         </div>
       </nav>
     </header>
+
+    <!-- Mobile offcanvas menu -->
+    <div
+      class="offcanvas offcanvas-start d-lg-none"
+      tabindex="-1"
+      id="mobileMenu"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menu</h5>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <!-- Search bar for mobile -->
+        <form class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search products..."
+            id="mobileSearchInput"
+          />
+        </form>
+
+        <!-- Results container -->
+        <div id="mobileSearchResults" class="row row-cols-1 g-3"></div>
+
+        <!-- Main nav -->
+        <ul class="navbar-nav mb-4">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product-category.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sample.html">Request Sample</a>
+          </li>
+        </ul>
+
+        <!-- Special links (mobile only) -->
+        <div class="mb-3">
+          <a class="nav-link fw-bold text-warning" href="login.html"
+            >Request Logistics</a
+          >
+          <a class="nav-link fw-bold text-warning" href="register.html"
+            >Become a Partner</a
+          >
+        </div>
+
+        <!-- Currency selector (mobile only) -->
+        <div class="mb-3">
+          <form action="https://foodcheq.coop/set-currency" method="POST">
+            <input
+              type="hidden"
+              name="_token"
+              value="hBap8p3Rj0gaLm42Yhgu4TZJH08MesPvE74ATfN9"
+            />
+            <select
+              id="currencyMobile"
+              name="currency"
+              onchange="this.form.submit()"
+              class="form-control"
+            >
+              <option value="USD" selected>USD ($)</option>
+              <option value="NGN">NGN (₦)</option>
+            </select>
+          </form>
+        </div>
+
+        <!-- Mobile header icons -->
+        <div class="d-flex justify-content-around">
+          <a
+            href="#"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#searchOffcanvas"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></a>
+          <a href="login.html"><i class="fa-solid fa-user"></i></a>
+          <a
+            href="wishlist.html"
+            class="position-relative"
+            aria-label="View Wishlist"
+          >
+            <i class="fa-regular fa-heart"></i>
+            <span
+              id="wishlistCountMobile"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              >0</span
+            >
+          </a>
+          <a href="cart.html" class="position-relative" aria-label="View Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span
+              id="cartCountMobile"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
+              >0</span
+            >
+          </a>
+        </div>
+      </div>
+    </div>
 
     <section class="product-section container">
       <h2>Our Natural Herbal Collection 🌿</h2>
@@ -189,256 +297,257 @@
         id="productGrid"
         class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4"
       >
-    
-    <div class="col">
-    <a href="product-category//rose-petal.html" class="product-card">
-      <img src="images/Rose-Petal-Tea.jpg" alt="Rose Petal">
-      <h5>Rose Petal</h5>
-      <p>$35 / 100g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category//rose-petal.html" class="product-card">
+            <img src="images/Rose-Petal-Tea.jpg" alt="Rose Petal" />
+            <h5>Rose Petal</h5>
+            <p>$35 / 100g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/peppermint.html" class="product-card">
-      <img src="images/Peppermint-Tea.jpg" alt="Peppermint">
-      <h5>Peppermint</h5>
-      <p>$10 / 200g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/peppermint.html" class="product-card">
+            <img src="images/Peppermint-Tea.jpg" alt="Peppermint" />
+            <h5>Peppermint</h5>
+            <p>$10 / 200g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/ginkgo.html" class="product-card">
-      <img src="images/Ginkgo-Tea.jpg" alt="Ginkgo">
-      <h5>Ginkgo</h5>
-      <p>$30</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/ginkgo.html" class="product-card">
+            <img src="images/Ginkgo-Tea.jpg" alt="Ginkgo" />
+            <h5>Ginkgo</h5>
+            <p>$30</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/holy-basil.html" class="product-card">
-      <img src="images/Holy-Basil-Tulsi.jpg" alt="Holy Basil Tulsi">
-      <h5>Holy Basil Tulsi</h5>
-      <p>$10</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/holy-basil.html" class="product-card">
+            <img src="images/Holy-Basil-Tulsi.jpg" alt="Holy Basil Tulsi" />
+            <h5>Holy Basil Tulsi</h5>
+            <p>$10</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/mint-tea.html" class="product-card">
-      <img src="images/Mint-Tea.jpg" alt="Mint">
-      <h5>Mint</h5>
-      <p>$3 / 100g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/mint-tea.html" class="product-card">
+            <img src="images/Mint-Tea.jpg" alt="Mint" />
+            <h5>Mint</h5>
+            <p>$3 / 100g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/blackthorn.html" class="product-card">
-      <img src="images/Blackthorn-Tea.jpg" alt="Blackthorn">
-      <h5>Blackthorn</h5>
-      <p>$10 / 100g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/blackthorn.html" class="product-card">
+            <img src="images/Blackthorn-Tea.jpg" alt="Blackthorn" />
+            <h5>Blackthorn</h5>
+            <p>$10 / 100g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/cinnamon.html" class="product-card">
-      <img src="images/Cinnamon-Extract.jpg" alt="Cinnamon Extract">
-      <h5>Cinnamon Extract</h5>
-      <p>$10 / 1kg</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/cinnamon.html" class="product-card">
+            <img src="images/Cinnamon-Extract.jpg" alt="Cinnamon Extract" />
+            <h5>Cinnamon Extract</h5>
+            <p>$10 / 1kg</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/wild-lecttuce.html" class="product-card">
-      <img src="images/Wild-Lettuce.jpg" alt="Wild Lettuce">
-      <h5>Wild Lettuce</h5>
-      <p>$10 / 50g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/wild-lecttuce.html" class="product-card">
+            <img src="images/Wild-Lettuce.jpg" alt="Wild Lettuce" />
+            <h5>Wild Lettuce</h5>
+            <p>$10 / 50g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/echinacea.html" class="product-card">
-      <img src="images/Echinacea.jpg" alt="Echinacea">
-      <h5>Echinacea</h5>
-      <p>$7 / 50g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/echinacea.html" class="product-card">
+            <img src="images/Echinacea.jpg" alt="Echinacea" />
+            <h5>Echinacea</h5>
+            <p>$7 / 50g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/elecampane-root.html" class="product-card">
-      <img src="images/Elecampane-Root.jpg" alt="Elecampane Root">
-      <h5>Elecampane Root</h5>
-      <p>$10 / 50g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/elecampane-root.html" class="product-card">
+            <img src="images/Elecampane-Root.jpg" alt="Elecampane Root" />
+            <h5>Elecampane Root</h5>
+            <p>$10 / 50g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/calendula.html" class="product-card">
-      <img src="images/Calendula.jpg" alt="Calendula">
-      <h5>Calendula</h5>
-      <p>$10 / 200g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/calendula.html" class="product-card">
+            <img src="images/Calendula.jpg" alt="Calendula" />
+            <h5>Calendula</h5>
+            <p>$10 / 200g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/cumin.html" class="product-card">
-      <img src="images/Cumin.jpg" alt="Cumin">
-      <h5>Cumin</h5>
-      <p>$3 / 100g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/cumin.html" class="product-card">
+            <img src="images/Cumin.jpg" alt="Cumin" />
+            <h5>Cumin</h5>
+            <p>$3 / 100g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/sumac.html" class="product-card">
-      <img src="images/Sumac.jpg" alt="Sumac">
-      <h5>Sumac</h5>
-      <p>$10 / 100g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/sumac.html" class="product-card">
+            <img src="images/Sumac.jpg" alt="Sumac" />
+            <h5>Sumac</h5>
+            <p>$10 / 100g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/giloy.html" class="product-card">
-      <img src="images/Giloy.jpg" alt="Giloy">
-      <h5>Giloy</h5>
-      <p>$15 / 100g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/giloy.html" class="product-card">
+            <img src="images/Giloy.jpg" alt="Giloy" />
+            <h5>Giloy</h5>
+            <p>$15 / 100g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/flax-seed.html" class="product-card">
-      <img src="images/Flax-Seed.jpg" alt="Flax Seed">
-      <h5>Flax Seed</h5>
-      <p>$15 / 50g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/flax-seed.html" class="product-card">
+            <img src="images/Flax-Seed.jpg" alt="Flax Seed" />
+            <h5>Flax Seed</h5>
+            <p>$15 / 50g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/paprika.html" class="product-card">
-      <img src="images/Paprika.jpg" alt="Paprika">
-      <h5>Paprika</h5>
-      <p>$3 / 100g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/paprika.html" class="product-card">
+            <img src="images/Paprika.jpg" alt="Paprika" />
+            <h5>Paprika</h5>
+            <p>$3 / 100g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/black-cosh.html" class="product-card">
-      <img src="images/Black-Cosh.jpg" alt="Black Cosh">
-      <h5>Black Cosh</h5>
-      <p>$10 / 50g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/black-cosh.html" class="product-card">
+            <img src="images/Black-Cosh.jpg" alt="Black Cosh" />
+            <h5>Black Cosh</h5>
+            <p>$10 / 50g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/nigella-seed.html" class="product-card">
-      <img src="images/Nigella-Seed.jpg" alt="Nigella Seed">
-      <h5>Nigella Seed</h5>
-      <p>$8 / 100g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/nigella-seed.html" class="product-card">
+            <img src="images/Nigella-Seed.jpg" alt="Nigella Seed" />
+            <h5>Nigella Seed</h5>
+            <p>$8 / 100g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/marjoram.html" class="product-card">
-      <img src="images/Marjoram.jpg" alt="Marjoram">
-      <h5>Marjoram</h5>
-      <p>₦20 / 100g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/marjoram.html" class="product-card">
+            <img src="images/Marjoram.jpg" alt="Marjoram" />
+            <h5>Marjoram</h5>
+            <p>₦20 / 100g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/witch-hazel" class="product-card">
-      <img src="images/Witch-Hazel.jpg" alt="Witch Hazel">
-      <h5>Witch Hazel</h5>
-      <p>₦10 / 500g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/witch-hazel" class="product-card">
+            <img src="images/Witch-Hazel.jpg" alt="Witch Hazel" />
+            <h5>Witch Hazel</h5>
+            <p>₦10 / 500g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/curcumin.html" class="product-card">
-      <img src="images/Curcumin.jpg" alt="Curcumin">
-      <h5>Curcumin</h5>
-      <p>₦5 / 100g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/curcumin.html" class="product-card">
+            <img src="images/Curcumin.jpg" alt="Curcumin" />
+            <h5>Curcumin</h5>
+            <p>₦5 / 100g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/green-tea.html" class="product-card">
-      <img src="images/Green-Tea.jpg" alt="Green Tea">
-      <h5>Green Tea</h5>
-      <p>$5 / 50g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/green-tea.html" class="product-card">
+            <img src="images/Green-Tea.jpg" alt="Green Tea" />
+            <h5>Green Tea</h5>
+            <p>$5 / 50g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/eucalyptus.html" class="product-card">
-      <img src="images/Eucalyptus-Leaf-And-Oil.jpg" alt="Eucalyptus Leaf And Oil">
-      <h5>Eucalyptus Leaf And Oil</h5>
-      <p>$6 / 50g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/eucalyptus.html" class="product-card">
+            <img
+              src="images/Eucalyptus-Leaf-And-Oil.jpg"
+              alt="Eucalyptus Leaf And Oil"
+            />
+            <h5>Eucalyptus Leaf And Oil</h5>
+            <p>$6 / 50g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/plantain-leaf.html" class="product-card">
-      <img src="images/Plantain-Leaf.jpg" alt="Plantain Leaf">
-      <h5>Plantain Leaf</h5>
-      <p>$15 / 50g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/plantain-leaf.html" class="product-card">
+            <img src="images/Plantain-Leaf.jpg" alt="Plantain Leaf" />
+            <h5>Plantain Leaf</h5>
+            <p>$15 / 50g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/chasteberry.html" class="product-card">
-      <img src="images/Chasteberry-Vitex.jpg" alt="Chasteberry (Vitex)">
-      <h5>Chasteberry (Vitex)</h5>
-      <p>$15 / 100g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/chasteberry.html" class="product-card">
+            <img src="images/Chasteberry-Vitex.jpg" alt="Chasteberry (Vitex)" />
+            <h5>Chasteberry (Vitex)</h5>
+            <p>$15 / 100g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/elder-berry.html" class="product-card">
-      <img src="images/Elder-Berry.jpg" alt="Elderberry">
-      <h5>Elderberry</h5>
-      <p>$9 / 50g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/elder-berry.html" class="product-card">
+            <img src="images/Elder-Berry.jpg" alt="Elderberry" />
+            <h5>Elderberry</h5>
+            <p>$9 / 50g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/khellin.html" class="product-card">
-      <img src="images/Khellin.jpg" alt="Khellin">
-      <h5>Khellin</h5>
-      <p>$5 / 50g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/khellin.html" class="product-card">
+            <img src="images/Khellin.jpg" alt="Khellin" />
+            <h5>Khellin</h5>
+            <p>$5 / 50g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/yarrow.html" class="product-card">
-      <img src="images/Yarrow.jpg" alt="Yarrow">
-      <h5>Yarrow</h5>
-      <p>$9 / 120g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/yarrow.html" class="product-card">
+            <img src="images/Yarrow.jpg" alt="Yarrow" />
+            <h5>Yarrow</h5>
+            <p>$9 / 120g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/celery-root.html" class="product-card">
-      <img src="images/Celery-Root.jpg" alt="Celery Root">
-      <h5>Celery Root</h5>
-      <p>$20 / 500g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/celery-root.html" class="product-card">
+            <img src="images/Celery-Root.jpg" alt="Celery Root" />
+            <h5>Celery Root</h5>
+            <p>$20 / 500g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/indian-tobacco.html" class="product-card">
-      <img src="images/Indian-Tobacco.jpg" alt="Indian Tobacco">
-      <h5>Indian Tobacco</h5>
-      <p>$10 / 50g</p>
-    </a>
-  </div>
+        <div class="col">
+          <a href="product-category/indian-tobacco.html" class="product-card">
+            <img src="images/Indian-Tobacco.jpg" alt="Indian Tobacco" />
+            <h5>Indian Tobacco</h5>
+            <p>$10 / 50g</p>
+          </a>
+        </div>
 
-  <div class="col">
-    <a href="product-category/danshen.html" class="product-card">
-      <img src="images/Danshen.jpg" alt="Danshen">
-      <h5>Danshen</h5>
-      <p>$10 / 50g</p>
-    </a>
-  </div>
-    
-    </div>
+        <div class="col">
+          <a href="product-category/danshen.html" class="product-card">
+            <img src="images/Danshen.jpg" alt="Danshen" />
+            <h5>Danshen</h5>
+            <p>$10 / 50g</p>
+          </a>
+        </div>
+      </div>
 
       <!-- Pagination -->
       <div
@@ -455,7 +564,6 @@
         >
       </div>
     </section>
-
 
     <script>
       document
@@ -532,9 +640,10 @@
               />
             </a>
             <p class="small">
-              FoodCheQ is a subscription-based food logistics service for
-              individuals and businesses interested in the Agricultural sector
-              value chains, particularly organic Health and Wellness Foods.
+              FoodCheQ is a technology driven herbal agro-processing company
+              that transforms traditional medicinal crops into standardized,
+              export-ready foods and extracts while empowering smallholder
+              farmers through a cooperative and traceable supply chain.
             </p>
             <a href="about.html" class="btn btn-outline-success btn-sm mt-2"
               >See More</a
@@ -711,95 +820,150 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
 
-    
-
     <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-
     <script>
-  let products = [];
+      let products = [];
 
-  // Fetch JSON and render Category 1
-  fetch("products.json")
-    .then((res) => res.json())
-    .then((data) => {
-      const category = data.categories.find((c) => c.id === 2);
-      products = category.products;
-      renderProducts(products);
-    });
+      // Fetch JSON and render Category 1
+      fetch("products.json")
+        .then((res) => res.json())
+        .then((data) => {
+          const category = data.categories.find((c) => c.id === 2);
+          products = category.products;
+          renderProducts(products);
+        });
 
-  function renderProducts(list) {
-    const grid = document.getElementById("productGrid");
-    grid.innerHTML = "";
-    list.forEach((product) => {
-      // create a slug for the product filename
-      const slug = product.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+      function renderProducts(list) {
+        const grid = document.getElementById("productGrid");
+        grid.innerHTML = "";
+        list.forEach((product) => {
+          // create a slug for the product filename
+          const slug = product.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
-      grid.innerHTML += `
+          grid.innerHTML += `
         <div class="col h-100">
           <div class="product-card">
             <a href="product-category/${slug}.html">
               <img src="${product.image}" alt="${product.name}">
-              <h5>${product.name} - $${product.price}${product.unit ? "/" + product.unit : ""}</h5>
+              <h5>${product.name} - $${product.price}${
+            product.unit ? "/" + product.unit : ""
+          }</h5>
             </a>
             <p>$${product.price.toFixed(2)}</p>
             <button class="btn btn-green w-100 mb-2 add-to-cart">
               <i class="fas fa-shopping-cart me-1"></i> Add to Cart
             </button>
-            <a href="request-sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+            <a href="sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
           </div>
         </div>`;
-    });
-    attachCartEvents();
-  }
+        });
+        attachCartEvents();
+      }
 
-  // Sorting
-  document.getElementById("sortProducts").addEventListener("change", function () {
-    const sortValue = this.value;
-    let sorted = [...products];
-    if (sortValue === "az") sorted.sort((a, b) => a.name.localeCompare(b.name));
-    if (sortValue === "za") sorted.sort((a, b) => b.name.localeCompare(a.name));
-    if (sortValue === "low-high") sorted.sort((a, b) => a.price - b.price);
-    if (sortValue === "high-low") sorted.sort((a, b) => b.price - a.price);
-    renderProducts(sorted);
-  });
+      // Sorting
+      document
+        .getElementById("sortProducts")
+        .addEventListener("change", function () {
+          const sortValue = this.value;
+          let sorted = [...products];
+          if (sortValue === "az")
+            sorted.sort((a, b) => a.name.localeCompare(b.name));
+          if (sortValue === "za")
+            sorted.sort((a, b) => b.name.localeCompare(a.name));
+          if (sortValue === "low-high")
+            sorted.sort((a, b) => a.price - b.price);
+          if (sortValue === "high-low")
+            sorted.sort((a, b) => b.price - a.price);
+          renderProducts(sorted);
+        });
 
-  // Cart badge update
-  function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    document.getElementById("cartCount").textContent = cart.reduce(
-      (sum, item) => sum + item.qty,
-      0
-    );
-  }
-  updateCartCount();
-
-  // Cart integration
-  function attachCartEvents() {
-    document.querySelectorAll(".add-to-cart").forEach((btn) => {
-      btn.addEventListener("click", function () {
-        const card = this.closest(".product-card");
-        const name = card.querySelector("h5").textContent.split(" - ")[0];
-        const price = parseFloat(
-          card.querySelector("p").textContent.replace(/[^\d.]/g, "")
+      // Cart badge update
+      function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        document.getElementById("cartCount").textContent = cart.reduce(
+          (sum, item) => sum + item.qty,
+          0
         );
-        const image = card.querySelector("img").src;
+      }
+      updateCartCount();
 
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const existing = cart.find((item) => item.name === name);
-        if (existing) existing.qty += 1;
-        else cart.push({ name, price, image, qty: 1 });
+      // Cart integration
+      function attachCartEvents() {
+        document.querySelectorAll(".add-to-cart").forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const card = this.closest(".product-card");
+            const name = card.querySelector("h5").textContent.split(" - ")[0];
+            const price = parseFloat(
+              card.querySelector("p").textContent.replace(/[^\d.]/g, "")
+            );
+            const image = card.querySelector("img").src;
 
-        localStorage.setItem("cart", JSON.stringify(cart));
-        updateCartCount(); // refresh badge
-        alert(`${name} added to cart!`);
-      });
-    });
-  }
-</script>
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const existing = cart.find((item) => item.name === name);
+            if (existing) existing.qty += 1;
+            else cart.push({ name, price, image, qty: 1 });
 
-    
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount(); // refresh badge
+            alert(`${name} added to cart!`);
+          });
+        });
+      }
+    </script>
+    <script>
+      document
+        .getElementById("mobileSearchInput")
+        .addEventListener("input", function () {
+          const query = this.value.toLowerCase();
+          const results = allProducts.filter((p) =>
+            p.name.toLowerCase().includes(query)
+          );
+          renderMobileResults(results);
+        });
+
+      function renderMobileResults(list) {
+        const container = document.getElementById("mobileSearchResults");
+        container.innerHTML = "";
+        if (list.length === 0) {
+          container.innerHTML = `<p class="text-muted">No products found.</p>`;
+          return;
+        }
+        list.forEach((product) => {
+          container.innerHTML += `
+        <div class="col">
+          <div class="card shadow-sm p-2 text-center">
+            <img src="${product.image}" alt="${
+            product.name
+          }" class="img-fluid mb-2" style="height:100px;object-fit:cover;">
+            <h6>${product.name}</h6>
+            <p class="text-success fw-bold">$${product.price.toFixed(2)}</p>
+            <button class="btn btn-green btn-sm add-to-cart"
+              data-name="${product.name}"
+              data-price="${product.price}"
+              data-image="${product.image}"
+              data-qty="1">Add to Cart</button>
+          </div>
+        </div>`;
+        });
+
+        // Reattach cart events
+        document
+          .querySelectorAll("#mobileSearchResults .add-to-cart")
+          .forEach((btn) => {
+            btn.addEventListener("click", function () {
+              const product = {
+                name: this.dataset.name,
+                price: parseFloat(this.dataset.price),
+                image: this.dataset.image,
+                qty: parseInt(this.dataset.qty),
+              };
+              addToCart(product);
+              alert(product.name + " added to cart!");
+            });
+          });
+      }
+    </script>
   </body>
 </html>
-

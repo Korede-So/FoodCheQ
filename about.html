@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -29,8 +29,7 @@
   </head>
 
   <body class="about-page">
-    <!-- header -->
-
+    <!-- headline bar -->
     <div class="headline">
       <div class="headline-text">
         <span>FREE SHIPPING AND RETURNS</span>
@@ -38,7 +37,8 @@
         <span>BECOME A PARTNER TODAY</span>
       </div>
 
-      <div class="headline-right">
+      <!-- Right side headline links + currency (desktop only) -->
+      <div class="headline-right d-none d-lg-flex">
         <ul class="headline-links">
           <li class="nav-item headline-link">
             <a href="login.html">Request<br />Logistics</a>
@@ -69,6 +69,7 @@
       </div>
     </div>
 
+    <!-- header -->
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -81,23 +82,24 @@
             />
           </a>
 
-          <!-- Hamburger toggle (mobile) -->
+          <!-- Hamburger toggle (mobile only) -->
           <button
-            class="navbar-toggler"
+            class="navbar-toggler d-lg-none"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu"
+            aria-controls="mobileMenu"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <!-- Collapsible nav links -->
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <!-- Desktop nav links -->
+          <div
+            class="collapse navbar-collapse d-none d-lg-flex"
+            id="navbarNavDropdown"
+          >
             <ul class="navbar-nav ms-auto">
-              <!-- Dropdown Menu -->
+              <!-- Dropdown stays for desktop -->
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -122,23 +124,29 @@
                       >Request Sample</a
                     >
                   </li>
+                  <li>
+                    <a class="dropdown-item" href="wishlist.html">Wishlist</a>
+                  </li>
                 </ul>
               </li>
 
-              <!-- Other links -->
+              <!-- Other desktop links -->
               <li class="nav-item">
                 <a class="nav-link special-link" href="login.html"
-                  >REQUEST <br />LOGISTICS</a
+                  >REQUEST <br />
+                  LOGISTICS</a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-link special-link" href="track-shipment.html"
-                  >TRACK <br />SHIPMENT</a
+                  >TRACK <br />
+                  SHIPMENT</a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-link special-link" href="register.html"
-                  >BECOME A <br />PARTNER</a
+                  >BECOME A <br />
+                  PARTNER</a
                 >
               </li>
             </ul>
@@ -149,16 +157,12 @@
                 href="#"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#searchOffcanvas"
-              >
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </a>
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
               <a href="login.html"><i class="fa-solid fa-user"></i></a>
-              <a
-                href="cart.html"
-                class="position-relative"
-                aria-label="View Cart"
-              >
-                <i class="fa-solid fa-cart-shopping"></i>
+              
+              <a href="cart.html" class="position-relative"
+                ><i class="fa-solid fa-cart-shopping"></i>
                 <span
                   id="cartCount"
                   class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
@@ -170,6 +174,112 @@
         </div>
       </nav>
     </header>
+
+    <!-- Mobile offcanvas menu -->
+    <div
+      class="offcanvas offcanvas-start d-lg-none"
+      tabindex="-1"
+      id="mobileMenu"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menu</h5>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <!-- Search bar for mobile -->
+        <form class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search products..."
+            id="mobileSearchInput"
+          />
+        </form>
+
+        <!-- Results container -->
+        <div id="mobileSearchResults" class="row row-cols-1 g-3"></div>
+
+        <!-- Main nav -->
+        <ul class="navbar-nav mb-4">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product-category.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sample.html">Request Sample</a>
+          </li>
+        </ul>
+
+        <!-- Special links (mobile only) -->
+        <div class="mb-3">
+          <a class="nav-link fw-bold text-warning" href="login.html"
+            >Request Logistics</a
+          >
+          <a class="nav-link fw-bold text-warning" href="register.html"
+            >Become a Partner</a
+          >
+        </div>
+
+        <!-- Currency selector (mobile only) -->
+        <div class="mb-3">
+          <form action="https://foodcheq.coop/set-currency" method="POST">
+            <input
+              type="hidden"
+              name="_token"
+              value="hBap8p3Rj0gaLm42Yhgu4TZJH08MesPvE74ATfN9"
+            />
+            <select
+              id="currencyMobile"
+              name="currency"
+              onchange="this.form.submit()"
+              class="form-control"
+            >
+              <option value="USD" selected>USD ($)</option>
+              <option value="NGN">NGN (₦)</option>
+            </select>
+          </form>
+        </div>
+
+        <!-- Mobile header icons -->
+        <div class="d-flex justify-content-around">
+          <a
+            href="#"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#searchOffcanvas"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></a>
+          <a href="login.html"><i class="fa-solid fa-user"></i></a>
+          <a
+            href="wishlist.html"
+            class="position-relative"
+            aria-label="View Wishlist"
+          >
+            <i class="fa-regular fa-heart"></i>
+            <span
+              id="wishlistCountMobile"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              >0</span
+            >
+          <a href="cart.html" class="position-relative" aria-label="View Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span
+              id="cartCountMobile"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
+              >0</span
+            >
+          </a>
+        </div>
+      </div>
+    </div>
 
     <!-- About Page Content -->
     <section class="about">
@@ -279,9 +389,10 @@
               />
             </a>
             <p class="small">
-              FoodCheQ is a subscription-based food logistics service for
-              individuals and businesses interested in the Agricultural sector
-              value chains, particularly organic Health and Wellness Foods.
+              FoodCheQ is a technology driven herbal agro-processing company
+              that transforms traditional medicinal crops into standardized,
+              export-ready foods and extracts while empowering smallholder
+              farmers through a cooperative and traceable supply chain.
             </p>
             <a href="about.html" class="btn btn-outline-success btn-sm mt-2"
               >See More</a
@@ -431,6 +542,8 @@
       </script>
     </footer>
 
+
+
     <div class="offcanvas offcanvas-end" tabindex="-1" id="searchOffcanvas">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title">Search Products</h5>
@@ -500,6 +613,51 @@
         attachCartEvents(); // reuse your cart.js function
       }
     </script>
+  <script>
+  document.getElementById("mobileSearchInput").addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+    const results = allProducts.filter(p => p.name.toLowerCase().includes(query));
+    renderMobileResults(results);
+  });
+
+  function renderMobileResults(list) {
+    const container = document.getElementById("mobileSearchResults");
+    container.innerHTML = "";
+    if (list.length === 0) {
+      container.innerHTML = `<p class="text-muted">No products found.</p>`;
+      return;
+    }
+    list.forEach(product => {
+      container.innerHTML += `
+        <div class="col">
+          <div class="card shadow-sm p-2 text-center">
+            <img src="${product.image}" alt="${product.name}" class="img-fluid mb-2" style="height:100px;object-fit:cover;">
+            <h6>${product.name}</h6>
+            <p class="text-success fw-bold">$${product.price.toFixed(2)}</p>
+            <button class="btn btn-green btn-sm add-to-cart"
+              data-name="${product.name}"
+              data-price="${product.price}"
+              data-image="${product.image}"
+              data-qty="1">Add to Cart</button>
+          </div>
+        </div>`;
+    });
+
+    // Reattach cart events
+    document.querySelectorAll("#mobileSearchResults .add-to-cart").forEach(btn => {
+      btn.addEventListener("click", function() {
+        const product = {
+          name: this.dataset.name,
+          price: parseFloat(this.dataset.price),
+          image: this.dataset.image,
+          qty: parseInt(this.dataset.qty)
+        };
+        addToCart(product);
+        alert(product.name + " added to cart!");
+      });
+    });
+  }
+</script>
+
   </body>
 </html>
-

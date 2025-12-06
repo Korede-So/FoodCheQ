@@ -1,0 +1,866 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Food Cheq | Product-Card 1</title>
+
+    <!--boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script>new WOW().init();</script>
+  <script src="cart.js"></script>
+
+
+  <!-- style.css -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+
+<body>
+  <!-- header --> 
+   
+  <div class="headline">
+  <div class="headline-text">
+    <span>FREE SHIPPING AND RETURNS</span>
+    <span>LIMITED TIME OFFER - SHOP NOW</span>
+    <span>BECOME A PARTNER TODAY</span>
+  </div>
+
+  <div class="headline-right">
+    <ul class="headline-links">
+
+      <li class="nav-item headline-link">
+        <a href="login.html">Request<br>Logistics</a>
+      </li>
+      <li class="nav-item headline-link">
+        <a href="register.html">Become<br>a Partner</a>
+      </li>
+
+    </ul>
+
+    <div class="tf-currencies">
+      <form action="https://foodcheq.coop/set-currency" method="POST">
+        <input type="hidden" name="_token" value="hBap8p3Rj0gaLm42Yhgu4TZJH08MesPvE74ATfN9">
+        <select id="currency" name="currency" onchange="this.form.submit()" class="form-control form-control-sm">
+          <option value="USD" selected>USD ($)</option>
+          <option value="NGN">NGN (₦)</option>
+        </select>
+      </form>
+    </div>
+  </div>
+  </div>
+
+  
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img src="https://foodcheq.coop/upload/eSio9fKkSKNFqEeGkq6kRnJDhaFpE1.png" alt="logo" class="logo" />
+      </a>
+
+      <!-- Hamburger toggle (mobile only) -->
+      <button class="navbar-toggler d-lg-none" type="button"
+              data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+              aria-controls="mobileMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Desktop nav links -->
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <!-- Dropdown stays for desktop -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="menuDropdown"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Menu
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+              <li><a class="dropdown-item" href="index.html">Home</a></li>
+              <li><a class="dropdown-item" href="about.html">About</a></li>
+              <li><a class="dropdown-item" href="product-category.html">Shop</a></li>
+              <li><a class="dropdown-item" href="sample.html">Request Sample</a></li>
+            </ul>
+          </li>
+
+          <!-- Other desktop links -->
+          <li class="nav-item"><a class="nav-link special-link" href="login.html">REQUEST <br> LOGISTICS</a></li>
+          <li class="nav-item"><a class="nav-link special-link" href="track-shipment.html">TRACK <br> SHIPMENT</a></li>
+          <li class="nav-item"><a class="nav-link special-link" href="register.html">BECOME A <br> PARTNER</a></li>
+        </ul>
+
+        <!-- Header icons -->
+        <div class="header-icons d-flex align-items-center ms-lg-3">
+          <a href="#" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvas"><i class="fa-solid fa-magnifying-glass"></i></a>
+          <a href="login.html"><i class="fa-solid fa-user"></i></a>
+          <a href="cart.html" class="position-relative"><i class="fa-solid fa-cart-shopping"></i>
+            <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile offcanvas menu -->
+<div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="mobileMenu">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Menu</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <!-- Search bar for mobile -->
+    <form class="mb-3">
+      <input type="text" class="form-control" placeholder="Search products..." id="mobileSearchInput">
+    </form>
+    
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="product-category.html">Shop</a></li>
+      <li class="nav-item"><a class="nav-link" href="sample.html">Request Sample</a></li>
+      <li class="nav-item"><a class="nav-link" href="login.html">Request Logistics</a></li>
+      <li class="nav-item"><a class="nav-link" href="track-shipment.html">Track Shipment</a></li>
+      <li class="nav-item"><a class="nav-link" href="register.html">Become a Partner</a></li>
+    </ul>
+  </div>
+</div></div>
+    </div>
+  </nav>
+</header>
+
+    <section class="product-section container">
+      <h2>Our Natural Herbal Collection 🌿</h2>
+
+      <!-- Sorting dropdown -->
+      <div class="d-flex justify-content-end mb-3">
+        <div>
+          <label for="sortProducts" class="form-label me-2">Sort by:</label>
+          <select id="sortProducts" class="form-select w-auto d-inline-block">
+            <option value="az">Name (A–Z)</option>
+            <option value="za">Name (Z–A)</option>
+            <option value="low-high">Price (Low → High)</option>
+            <option value="high-low">Price (High → Low)</option>
+          </select>
+        </div>
+      </div>
+
+      
+
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+ 
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Baobab.jpg" alt="Baobab Superfruit Powder">
+          <h5>Baobab Superfruit Powder - $3/200g</h5>
+          <p>$3.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+      
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Butterbur.jpg" alt="Butterbur Balanced Tea">
+          <h5>Butterbur - $50/500g</h5>
+          <p>$50.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+      
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Turmeric-Powder.jpg" alt="Turmeric Glow Blend">
+          <h5>Turmeric Glow Blend - $20/kg</h5>
+          <p>$20.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+      
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Ginger-Powder.jpg" alt="Ginger Vital Tea">
+          <h5>Ginger Vital - $5/kg</h5>
+          <p>$5.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+      
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Capsaicin-Extract.jpg" alt="Capsaicin-Extract">
+          <h5>Capsaicin - $2/250g</h5>
+          <p>$2.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+      
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Bamboo-Leaf-Extract.jpg" alt="Bamboo-Leaf-Extract">
+          <h5>Bamboo Leaf - $10/kg</h5>
+          <p>$10.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+      
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Ashwagandha.jpg" alt="Ashwagandha">
+          <h5>Ashwagandha - $35/kg</h5>
+          <p>$35.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+      
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Guggula-Powder.jpg" alt="Guggula-Powder">
+          <h5>Green Guggula - $60/kg</h5>
+          <p>$60.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+      
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Age-Well-Antrodia-Mushroom-Tea.jpg" alt="Age-Well-Antrodia-Mushroom-Tea-BG">
+          <h5>Antrodia Mushroom - $10/100g</h5>
+          <p>$10.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Astragalus-Root-Extract.jpg" alt="Astragalus">
+          <h5>Astragalus - $40/500g</h5>
+          <p>$40.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Bacopa-Monnieri.jpg" alt="Bacopa-Monnieri">
+          <h5>Bacopa Monnieri - $10</h5>
+          <p>$10.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Black-Pepper.jpg" alt="Black-Pepper">
+          <h5>Black Pepper - $50/kg</h5>
+          <p>$50.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+      
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Capsaicin-Extract.jpg" alt="Capsaicin-Extract">
+          <h5>Capsaicin-Extract</h5>
+          <p>₦3,500</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Clove-Powder.jpg" alt="Clove-Powder">
+          <h5>Clove - $4/50g</h5>
+          <p>$4.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Dandelion-Root.jpg" alt="Dandelion-Root">
+          <h5>Dandelion - $12/50g</h5>
+          <p>$12.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Ginseng-Root.jpg" alt="Ginseng-Root">
+          <h5>Ginseng Root - $10/kg</h5>
+          <p>$10.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Kava-Kava-Tea.jpg" alt="Kava-Kava-Tea">
+          <h5>Kava Kava - $15/120g</h5>
+          <p>$15.00</p>
+          <button class="btn btn-green w-100 mb-2">Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Lemon-Balm-Tea.jpg" alt="Lemon-Balm-Tea">
+          <h5>Lemon Balm - $10</h5>
+          <p>$10.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Licorice-Root-Tea.jpg" alt="Licorice-Root-Tea">
+          <h5>Licorice Root - $3/200g</h5>
+          <p>$3.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Milk-Thistle-Tea.jpg" alt="Milk-Thistle-Tea">
+          <h5>Milk Thistle - $80/500g</h5>
+          <p>$80.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Mullein-Tea.jpg" alt="Mullein-Tea">
+          <h5>Mullein Leaf - $8/50g</h5>
+          <p>$8.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Parsley-Tea.jpg" alt="Parsley-Tea">
+          <h5>Parsley - $3/Bunch</h5>
+          <p>$3.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/PassionFlower-Tea.jpg" alt="PassionFlower-Tea">
+          <h5>PassionFlower - $10/30g</h5>
+          <p>$10.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Rasna-Tea.jpg" alt="Rasna-Tea">
+          <h5>Rasna - $8/100g</h5>
+          <p>$8.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Sage-Tea.jpg" alt="Sage-Tea">
+          <h5>Sage - $3/Bunch</h5>
+          <p>$3.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Slippery-Elm-Tea.jpg" alt="Slippery-Elm-Tea">
+          <h5>Slippery Elm - $20/500g</h5>
+          <p>$20.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/St.John's-Wort.jpg" alt="St.John's-Wort">
+          <h5>John's Wort - $8/50g</h5>
+          <p>$8.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Stinging-Nettle-Tea.jpg" alt="String-Nettle-Tea">
+          <h5>Stinging Nettle - $10/100g</h5>
+          <p>$10.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Wolfberry-Tea.jpg" alt="Wolfberry-Tea">
+          <h5>Wolfberry - $12/kg</h5>
+          <p>$12.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Spinach-Tea.jpg" alt="Spinach-Tea">
+          <h5>Spinach - $3/kg</h5>
+          <p>$3.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Skullcap-Tea.jpg" alt="Skullcap-Tea">
+          <h5>Skullcap - $12/50g</h5>
+          <p>$12.00</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+
+      <div class="col h-100">
+        <div class="product-card">
+          <img src="/images/Rosemary-Tea.jpg" alt="Rosemary-Tea">
+          <h5>Rosemary - $3/50g</h5>
+          <p>₦3,500</p>
+          <button class="btn btn-green w-100 mb-2">
+            <i class="fas fa-shopping-cart me-1"></i>
+            Add to Cart</button>
+          <a href="request sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="pagination d-flex justify-content-center align-items-center mt-4">
+      <a href="#" class="btn btn-light disabled"><i class="fa-solid fa-arrow-left"></i></a>
+      <a href="product-category.html" class="btn btn-success mx-1 active">1</a>
+      <a href="product-category2.html" class="btn btn-outline-success mx-1">2</a>
+      <a href="product-category3.html" class="btn btn-outline-success mx-1">3</a>
+      <a href="product-category2.html" class="btn btn-light"><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+
+
+  </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- footer -->
+    <footer class="bg-dark text-light pt-5">
+      <div class="container">
+        <div class="row">
+          <!-- About Us -->
+          <div class="col-md-3 col-12 mb-4">
+            <h6 class="fw-bold">ABOUT US</h6>
+            <a href="https://foodcheq.coop">
+              <img
+                src="https://foodcheq.coop/upload/eSio9fKkSKNFqEeGkq6kRnJDhaFpE1.png"
+                alt="Logo"
+                class="img-fluid mb-2"
+                style="max-width: 150px"
+              />
+            </a>
+            <p class="small">
+              FoodCheQ is a technology driven herbal agro-processing company that transforms traditional medicinal crops into standardized, export-ready foods and extracts while empowering smallholder farmers through a cooperative and traceable supply chain.
+            </p>
+            <a href="about.html" class="btn btn-outline-success btn-sm mt-2"
+              >See More</a
+            >
+          </div>
+
+          <!-- Help -->
+          <div class="col-md-3 col-12 mb-4">
+            <h6 class="fw-bold">HELP</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a
+                  href="https://foodcheq.coop/privacy"
+                  class="text-light text-decoration-none"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/returns"
+                  class="text-light text-decoration-none"
+                  >Returns + Exchanges</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/shipping_delivery"
+                  class="text-light text-decoration-none"
+                  >Shipping + Delivery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/terms"
+                  class="text-light text-decoration-none"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/faq"
+                  class="text-light text-decoration-none"
+                  >FAQ's</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Navigation -->
+          <div class="col-md-3 col-12 mb-4">
+            <h6 class="fw-bold">QUICK NAVIGATION</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a href="about.html" class="text-light text-decoration-none"
+                  >Our Story</a
+                >
+              </li>
+              <li>
+                <a
+                  href="product-category.html"
+                  class="text-light text-decoration-none"
+                  >Visit Our Store</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/vendors"
+                  class="text-light text-decoration-none"
+                  >Our Partners</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/blog"
+                  class="text-light text-decoration-none"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/fedex_track"
+                  class="text-light text-decoration-none"
+                  >Track Shipment</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://foodcheq.coop/contact"
+                  class="text-light text-decoration-none"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="login.html" class="text-light text-decoration-none"
+                  >Account</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Us -->
+          <div class="col-md-3 col-12 mb-4">
+            <h6 class="fw-bold">CONTACT US</h6>
+            <ul class="list-unstyled small">
+              <li class="mb-1">
+                Address: Plot A, Central Orchard Section, Okiloki Farm
+                Settlement, Abbi NWLGA, Delta State
+              </li>
+              <li class="mb-1">
+                Email:
+                <a
+                  href="mailto:team@foodcheq.coop"
+                  class="text-light text-decoration-none"
+                  >team@foodcheq.coop</a
+                >
+              </li>
+              <li class="mb-1">
+                Phone:
+                <a
+                  href="tel:+2349027921510"
+                  class="text-light text-decoration-none"
+                  >+2349027921510</a
+                >
+              </li>
+            </ul>
+            <a
+              href="https://foodcheq.coop/contact"
+              class="btn btn-outline-success btn-sm mt-2"
+              >Get Directions</a
+            >
+          </div>
+        </div>
+
+        <hr class="border-success" />
+
+        <!-- Footer Bottom -->
+        <div class="row">
+          <div class="col-12 text-center small text-muted">
+            © <span id="year"></span> FoodCheQ. All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+      <!-- Year Script -->
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+    </footer>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="searchOffcanvas">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Search Products</h5>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Cancel"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <input
+          type="text"
+          id="searchInput"
+          class="form-control mb-3"
+          placeholder="Search..."
+        />
+        <div
+          id="searchResults"
+          class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4"
+        ></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+    
+
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+  let products = [];
+
+
+
+   function renderProducts(list) {
+    const grid = document.getElementById("productGrid");
+    grid.innerHTML = "";
+    list.forEach((product) => {
+      // create a slug for the product filename
+      const slug = product.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
+      grid.innerHTML += `
+        <div class="col h-100">
+          <div class="product-card">
+            <a href="product-category/${slug}.html">
+              <img src="${product.image}" alt="${product.name}">
+              <h5>${product.name} - $${product.price}${product.unit ? "/" + product.unit : ""}</h5>
+            </a>
+            <p>$${product.price.toFixed(2)}</p>
+            <button class="btn btn-green w-100 mb-2 add-to-cart">
+              <i class="fas fa-shopping-cart me-1"></i> Add to Cart
+            </button>
+            <a href="request-sample.html" class="btn btn-outline-success w-100">Try a Sample</a>
+          </div>
+        </div>`;
+    });
+    attachCartEvents();
+  }
+
+
+  // Sorting
+  document.getElementById("sortProducts").addEventListener("change", function () {
+    const sortValue = this.value;
+    let sorted = [...products];
+    if (sortValue === "az") sorted.sort((a, b) => a.name.localeCompare(b.name));
+    if (sortValue === "za") sorted.sort((a, b) => b.name.localeCompare(a.name));
+    if (sortValue === "low-high") sorted.sort((a, b) => a.price - b.price);
+    if (sortValue === "high-low") sorted.sort((a, b) => b.price - a.price);
+    renderProducts(sorted);
+  });
+
+  // Cart badge update
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cartCount").textContent = cart.reduce(
+      (sum, item) => sum + item.qty,
+      0
+    );
+  }
+  updateCartCount();
+
+  // Cart integration
+  function attachCartEvents() {
+    document.querySelectorAll(".add-to-cart").forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const card = this.closest(".product-card");
+        const name = card.querySelector("h5").textContent.split(" - ")[0];
+        const price = parseFloat(
+          card.querySelector("p").textContent.replace(/[^\d.]/g, "")
+        );
+        const image = card.querySelector("img").src;
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const existing = cart.find((item) => item.name === name);
+        if (existing) existing.qty += 1;
+        else cart.push({ name, price, image, qty: 1 });
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount(); // refresh badge
+        alert(`${name} added to cart!`);
+      });
+    });
+  }
+</script>
+
+  </body>
+</html>
+
+
